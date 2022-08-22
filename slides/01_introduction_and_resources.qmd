@@ -1,32 +1,23 @@
 ---
 title: "Introduction & Computing Resources"
-subtitle: "2020 DSS Bootcamp"
+subtitle: "2022 DSS Bootcamp"
 author: "Colin Rundel"
 institute: ""
-date: "08-02-21"
-output:
-  xaringan::moon_reader:
-    css: "css/slides.css"
-    lib_dir: libs
-    nature:
-      ratio: '16:9'
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
-editor_options: 
-  chunk_output_type: console
----
+date: "08-22-22"
+format: 
+  revealjs:
+    slide-number: true
+    highlight-style: a11y
+    theme: [default, custom.scss]
+execute:
+  echo: true
 
-```{r include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,
-                      comment = "#>", highlight = TRUE,
-                      fig.align = "center")
-```
+---
 
 ## Welcome
 
 Welcome to the Department of Statistical Science (DSS). The following slides,
-slide decks, and exampls will serve to
+slide decks, and examples will serve to
 
 - give you an understanding of the computing resources available to you within 
   the DSS and Duke University;
@@ -39,13 +30,9 @@ slide decks, and exampls will serve to
 - highlight the importance of reproducible research and how the aforementioned
   software can help.
 
----
-
-class: inverse, middle center
 
 # Duke Computing Resources
 
----
 
 ## Duke NetID
 
@@ -61,7 +48,6 @@ https://idms-web.oit.duke.edu/portal/:
   
   - Setup multi-factor authentication (Duo recommended)
 
----
 
 ## Duke email
 
@@ -70,7 +56,6 @@ http://mail.duke.edu
 
 **Your Duke email is not permanent; your account expires once you leave Duke.**
 
----
 
 ## Duke WiFi
 
@@ -93,8 +78,7 @@ Duke network connections:
     - To use eduroam at a participating institution, configure 
       your machine ahead of time while at Duke - 
       https://dukeblue.duke.edu/eduroam/.
-      
----
+
 
 ## Duke VPN
 
@@ -109,7 +93,6 @@ Duke network connections:
   For more information on Duke's VPN visit
   https://oit.duke.edu/what-we-do/services/vpn.
 
----
 
 ## Duke VPN set-up
 
@@ -129,8 +112,7 @@ Duke network connections:
    <center>
    <img src="images/cisco_group.png" height=150, width=300>
    </center>
-   
----
+
 
 ## Software Site Licenses
 
@@ -151,8 +133,7 @@ Duke network connections:
   - Mathematica
   - Tableau
   - Adobe Creative Cloud
-  
----
+
 
 ## Virtual computing
 
@@ -165,8 +146,10 @@ Duke OIT offers virtual software containers and semester-long virtual machines.
   web browser; no software download is required. Two containers you will find
   most useful are:
     
-    - `RStudio - statistics application with Rmarkdown and knitr support`
-    - `Jupyter - interactive data science and scientific computing notebooks`
+    - RStudio - statistics application with Rmarkdown and knitr support
+    - Jupyter - interactive data science and scientific computing notebooks
+
+##
 
 - [Virtual Machine (VM)](https://vcm.duke.edu/) – Your Duke VM is like having a 
   second computer that lives at Duke. You can log into and use your VM 
@@ -177,8 +160,7 @@ Duke OIT offers virtual software containers and semester-long virtual machines.
   
     - Run Windows or Linux VMs
     - Computing resources are light: 2 processors and 2GB of memory
-    
----
+
 
 ## Duke Compute Cluster
 
@@ -186,20 +168,21 @@ The Duke Compute Cluster (DCC) consists of machines that the University has
 provided for community use and that researchers have purchased to conduct their 
 research. You will need to be granted access before use.
 
-- Runs on Linux - Red Hat Enterprise Linux 7
+- Runs Linux - Red Hat Enterprise Linux 7
 
 - Offers over 200 compute nodes and over 20,000 cores
 
-- Most nodes are purchased by labs and departments. The DSS has three nodes.
+- Most nodes are purchased by labs and departments. The DSS has three nodes (more soon).
 
 - Uses the SLURM job management system
+
+- [OnDemand](https://dcc-ondemand-01.oit.duke.edu/) for interactive use
 
 - Requires sponsorship by a faculty member to use
 
 The [DCC User Guide](https://rc.duke.edu/dcc/dcc-user-guide/) will help you
 get up and running. They also host workshops to help new users.
 
----
 
 ## Getting help with Duke resources
 
@@ -216,31 +199,24 @@ infrastructure and application support.
   
 - Live service status dashboard available at https://status.oit.duke.edu/
 
----
-
-class: inverse, middle center
 
 # DSS Computing Resources
 
----
 
 ## RStudio Workbench
 
-The DSS has an RStudio Workbench (formerly Pro) license that will allow you to connect to an instance of RStudio (and Jupyter) in your browser while harnessing the computing power of a remote multiprocessor server.
+The DSS has an RStudio Workbench (formerly Pro) license that will allow you to connect to an instance of RStudio (+ Jupyter and VS Code) in your browser while harnessing the computing power of a remote multiprocessor server.
 
 To access RStudio Pro:
 
 1. If off campus, use the VPN to create a secure connection from your computer 
-   to Duke. If you are on campus, be sure you are connected to the Dukeblue
+   to Duke. If you are on campus, be sure you are connected to the DukeBlue
    network.
 
-2. Navigate to:
-
-    - http://rstudio.stat.duke.edu:8787
+2. Navigate to: [http://rstudio.stat.duke.edu:8787](http://rstudio.stat.duke.edu:8787)
 
 3. Log-in with your NetID and password.
 
----
 
 ## Other resources
 
@@ -263,9 +239,8 @@ To access RStudio Pro:
 
 - Email aliases: https://stat.duke.edu/resources/email/aliases
   
-- Departmental IT resources page is coming soon
+- Departmental IT resources - https://stat.duke.edu/it-support
 
----
 
 ## Getting help with DSS resources
 
@@ -275,11 +250,14 @@ members will get back with you ASAP.
   
 [Zoyia Melton](https://stat.duke.edu/people/zoyia-melton) - Senior IT Analyst
 
-  - Phone: 919-684-5419
+  - Phone: (919) 684-5419
   - Location: 027 Old Chemistry
 
-[Frisco Rose](https://stat.duke.edu/people/francis-rose-0) - Assistant Research 
-Professor in the Department of Mechanical Engineering and Materials Science
+Science Drive - Academic Technology Support
 
-  - Phone: 919-660-5496
-  - Location: 026 Old Chem
+  - [tts-sciencehelp@duke.edu](mailto:tts-sciencehelp@duke.edu)
+  - Phone: (919) 684-2200
+  - https://oit.duke.edu/academic-technology-support-science-drive
+
+
+If you are having trouble getting support contact the department's computing committee [stat-cc@duke.edu](mailto:stat-cc@duke.edu).
