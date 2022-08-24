@@ -1,7 +1,7 @@
 ---
 title: "UN Votes"
-author: "<Your name here>"
-output: html_document
+author: "Your name here"
+format: html
 ---
 
 ## Introduction
@@ -13,7 +13,9 @@ Answering these questions (at a high level) is the focus of this analysis.
 
 We will use the **tidyverse**, **lubridate**, and **scales** packages for data wrangling and visualization, and the **DT** package for interactive display of tabular output, and the **unvotes** package for the data.
 
-```{r load-packages, warning=FALSE, message=FALSE}
+```{r load-packages}
+#| warning: false
+#| message: false
 library(tidyverse)
 library(lubridate)
 library(scales)
@@ -46,7 +48,11 @@ We can easily change which countries are being plotted by changing which countri
 Note that the country name should be spelled and capitalized exactly the same way as it appears in the data.
 See the [Appendix](#appendix) for a list of the countries in the data.
 
-```{r plot-yearly-yes-issue, fig.width=10, fig.height=6, message=FALSE}
+```{r plot-yearly-yes-issue}
+#| fig.width: 10
+#| fig.height: 6
+#| message: false
+
 unvotes %>%
   filter(country %in% c("UK", "US", "Turkey")) %>%
   mutate(year = year(date)) %>%
