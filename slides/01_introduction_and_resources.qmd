@@ -1,9 +1,9 @@
 ---
-title: "Introduction & Computing Resources"
+title: "Introduction &<br/>Computing Resources"
 subtitle: "2022 DSS Bootcamp"
 author: "Colin Rundel"
 institute: ""
-date: "08-22-22"
+date: "08-25-22"
 format: 
   revealjs:
     slide-number: true
@@ -40,21 +40,28 @@ Your Duke NetID is the electronic key to making many Duke resources work.
 Make sure your Duke Account has been setup.
 
 All of the following can be accomplished at 
-https://idms-web.oit.duke.edu/portal/:
+[idms-web.oit.duke.edu/portal/](https://idms-web.oit.duke.edu/portal/):
 
   - Changing your password
   
   - Changing your challenge questions
   
   - Setup multi-factor authentication (Duo recommended)
+  
+  - Change email alias(es)
+  
+  - ssh keys + default shell
 
 
 ## Duke email
 
 With your NetID and password, you can access your email on the web at
-http://mail.duke.edu
+[mail.duke.edu](http://mail.duke.edu)
 
-**Your Duke email is not permanent; your account expires once you leave Duke.**
+- Your Duke email is not permanent; your account expires once you leave Duke.
+
+- Mail forwarding is possible but not recommended
+
 
 
 ## Duke WiFi
@@ -87,8 +94,6 @@ Duke network connections:
   will be necessary for you to use, if you want to access certain Duke and DSS
   resources off campus.
 
-<br/>
-
 - Instructions to get started with the VPN are available on the next slide.
   For more information on Duke's VPN visit
   https://oit.duke.edu/what-we-do/services/vpn.
@@ -96,28 +101,44 @@ Duke network connections:
 
 ## Duke VPN set-up
 
+:::: {.columns}
+
+::: {.column width='50%'}
 1. Download and install the free Cisco AnyConnect VPN 
    [software](https://software.duke.edu)
 
-2. Launch Cisco AnyConnect on your machine and enter `vpn.duke.edu` in the box.
-   Click `Connect`.<br/>
+2. Launch Cisco AnyConnect on your machine
+
+3. Enter `vpn.duke.edu` in the box and click `Connect`.<br/>
    <center>
    <img src="images/cisco_launch.png" height=150, width=300>
    </center>
-   
-3. Another dialog box will appear. Choose `INTL-DUKE` from the dropdown menu
-   for `GROUP`, and enter your Duke NetID and password. Click `OK` and you 
-   should connect.
+:::
+
+::: {.column width='50%'}
+3. Another dialog box will appear. Choose `-Default-` from the Group dropdown menu
+
+
+4. Enter your Duke NetID and password and click `OK`.
    <br/>
    <center>
    <img src="images/cisco_group.png" height=150, width=300>
    </center>
+   
+5. Follow the steps to complete MFA.
+:::
+
+::::
+
+
+   
+
 
 
 ## Software Site Licenses
 
 - Duke offers software for download to students, faculty, and staff through 
-  https://software.duke.edu/
+  [software.duke.edu](https://software.duke.edu/)
 
 - Duke negotiates with vendors to make software available to the Duke community 
   for discounted rates or, in many cases, for free. If you have any questions, 
@@ -126,28 +147,37 @@ Duke network connections:
 
 - Some free software relevant to you as students: 
 
-  - Cisco VPN Client
-  - Microsoft Office
-  - MATLAB & Simulink
-  - SAS Education Analytical Suite
-  - Mathematica
-  - Tableau
-  - Adobe Creative Cloud
+  :::: {.columns}
+  ::: {.column width='50%'}
+    - Microsoft Office
+    - MATLAB & Simulink
+    - SAS
+  :::
+  
+  ::: {.column width='50%'}
+    - Mathematica
+    - Tableau
+    - Adobe Creative Cloud
+  :::
+  ::::
+
+
+
 
 
 ## Virtual computing
 
 Duke OIT offers virtual software containers and semester-long virtual machines.
 
-- [Virtual Software Containers](https://vm-manage.oit.duke.edu/containers) – 
+- [Virtual Software Containers](https://cmgr.oit.duke.edu/) – 
   Students and instructors can reserve personal computer environments running 
-  applications such as RStudio, the Eclipse IDE, Jupyter Notebooks, Matlab, 
-  Octave, Mathematica, and others for a semester. These are run through your
-  web browser; no software download is required. Two containers you will find
-  most useful are:
+  applications such as RStudio, Eclipse, Jupyter Notebooks, Matlab, and others for a semester. These are run through your
+  web browser; no software download is required. 
+  
+  Two containers liekly to be most useful are:
     
-    - RStudio - statistics application with Rmarkdown and knitr support
-    - Jupyter - interactive data science and scientific computing notebooks
+    - `RStudio` - statistics application with Rmarkdown and knitr support
+    - `Jupyter` - interactive data science and scientific computing notebooks
 
 ##
 
@@ -160,21 +190,20 @@ Duke OIT offers virtual software containers and semester-long virtual machines.
   
     - Run Windows or Linux VMs
     - Computing resources are light: 2 processors and 2GB of memory
+    - By default each VM will power down at 6:00 am every morning
 
 
 ## Duke Compute Cluster
 
 The Duke Compute Cluster (DCC) consists of machines that the University has 
 provided for community use and that researchers have purchased to conduct their 
-research. You will need to be granted access before use.
+research. You will need to be given access before use.
 
-- Runs Linux - Red Hat Enterprise Linux 7
+- Runs Linux (CentOS 8) and uses the SLURM job management system
 
-- Offers over 200 compute nodes and over 20,000 cores
+- Offers over 1300 nodes with more than 30,000 cores, 750 GPUs, 200 TBs of RAM and 7 PB file system.
 
 - Most nodes are purchased by labs and departments. The DSS has three nodes (more soon).
-
-- Uses the SLURM job management system
 
 - [OnDemand](https://dcc-ondemand-01.oit.duke.edu/) for interactive use
 
@@ -189,15 +218,15 @@ get up and running. They also host workshops to help new users.
 Duke Office of Information Technology (OIT) manages Duke’s technology 
 infrastructure and application support.
     
-- https://oit.duke.edu/help
+- [oit.duke.edu/help](https://oit.duke.edu/help)
 
-- Live chat, 24 hours a day, Monday - Thursday; chat is available on a limited
+- Live chat - 24 hours a day, Monday - Thursday; chat is available on a limited
   basis Fridays and Sundays
 
 - Walk up hours are available at the [Link](https://link.duke.edu/about-link) in 
   [Perkins Library](http://www.google.com/maps?q=William+R.+Perkins+Library,+Durham,+NC&hl=en&sll=36.001827,-78.884911&sspn=0.486055,0.681839&oq=perkins+&hq=William+R.+Perkins+Library,+Durham,+NC&t=m&z=15).
   
-- Live service status dashboard available at https://status.oit.duke.edu/
+- Live service status dashboard available at [status.oit.duke.edu](https://status.oit.duke.edu/) or [@DukeOIT](https://twitter.com/DukeOIT/)
 
 
 # DSS Computing Resources
@@ -205,7 +234,7 @@ infrastructure and application support.
 
 ## RStudio Workbench
 
-The DSS has an RStudio Workbench (formerly Pro) license that will allow you to connect to an instance of RStudio (+ Jupyter and VS Code) in your browser while harnessing the computing power of a remote multiprocessor server.
+The DSS has an RStudio Workbench (formerly Pro) license that will allow you to connect to an instance of RStudio (or Jupyter Lab or VS Code) in your browser while making use of the computing power of a remote multiprocessor server.
 
 To access RStudio Pro:
 
@@ -223,23 +252,32 @@ To access RStudio Pro:
 - Local file system on DSS servers
 
   - Connect via SSH to 
+  
+    :::: {.columns}
+    ::: {.column width='50%'}
       - rstudio.stat.duke.edu
-      - pawn.stat.duke.edu
       - rook.stat.duke.edu
+    :::
+
+    ::: {.column width='50%'}
       - knight.stat.duke.edu
+      - monster.stat.duke.edu
+    :::
+    ::::
+
+  
+
+
     
 - RStudio Connect
 
-  - a publishing platform for the work you do in R and Python 
+- Email aliases - [stat.duke.edu/resources/email/aliases](https://stat.duke.edu/resources/email/aliases)
   
-  - share Shiny applications, R Markdown reports, Plumber APIs, dashboards, 
-    Jupyter Notebooks, interactive Python content, and more
-    
-  - if you need access, ask and we can help get you set-up
+- Departmental IT resources - [stat.duke.edu/it-support](https://stat.duke.edu/it-support)
 
-- Email aliases: https://stat.duke.edu/resources/email/aliases
-  
-- Departmental IT resources - https://stat.duke.edu/it-support
+- Departmental Wiki - [wiki.stat.duke.edu](https://wiki.stat.duke.edu)
+  - Must be on a Duke Network to access
+  - Printer configuration details
 
 
 ## Getting help with DSS resources
