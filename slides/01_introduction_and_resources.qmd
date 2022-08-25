@@ -296,7 +296,7 @@ Science Drive - Academic Technology Support
 
   - [tts-sciencehelp@duke.edu](mailto:tts-sciencehelp@duke.edu)
   - Phone: (919) 684-2200
-  - https://oit.duke.edu/academic-technology-support-science-drive
+  - [oit.duke.edu/academic-technology-support-science-drive](https://oit.duke.edu/academic-technology-support-science-drive)
 
 
 If you are having trouble getting support contact the department's computing committee [stat-cc@duke.edu](mailto:stat-cc@duke.edu).
