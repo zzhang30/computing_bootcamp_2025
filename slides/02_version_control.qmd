@@ -6,6 +6,7 @@ institute: ""
 date: "08-25-22"
 format: 
   revealjs:
+    self-contained: true
     slide-number: true
     highlight-style: a11y
     theme: [default, custom.scss]
