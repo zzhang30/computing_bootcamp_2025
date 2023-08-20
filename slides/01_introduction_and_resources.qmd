@@ -1,9 +1,9 @@
 ---
 title: "Introduction &<br/>Computing Resources"
-subtitle: "2022 DSS Bootcamp"
+subtitle: "2023 DSS Bootcamp"
 author: "Colin Rundel"
 institute: ""
-date: "08-25-22"
+date: "08-23-23"
 format: 
   revealjs:
     self-contained: true
@@ -132,9 +132,6 @@ Duke network connections:
 ::::
 
 
-   
-
-
 
 ## Software Site Licenses
 
@@ -175,7 +172,7 @@ Duke OIT offers virtual software containers and semester-long virtual machines.
   applications such as RStudio, Eclipse, Jupyter Notebooks, Matlab, and others for a semester. These are run through your
   web browser; no software download is required. 
   
-  Two containers liekly to be most useful are:
+  Two containers likely to be most useful are:
     
     - `RStudio` - statistics application with Rmarkdown and knitr support
     - `Jupyter` - interactive data science and scientific computing notebooks
@@ -243,7 +240,7 @@ To access RStudio Pro:
    to Duke. If you are on campus, be sure you are connected to the DukeBlue
    network.
 
-2. Navigate to: [http://rstudio.stat.duke.edu:8787](http://rstudio.stat.duke.edu:8787)
+2. Navigate to: <https://rstudio.stat.duke.edu>
 
 3. Log-in with your NetID and password.
 
@@ -252,31 +249,17 @@ To access RStudio Pro:
 
 - Local file system on DSS servers
 
-  - Connect via SSH to 
+  - Connect via SSH to `rstudio.stat.duke.edu`
   
-    :::: {.columns}
-    ::: {.column width='50%'}
-      - rstudio.stat.duke.edu
-      - rook.stat.duke.edu
-    :::
-
-    ::: {.column width='50%'}
-      - knight.stat.duke.edu
-      - monster.stat.duke.edu
-    :::
-    ::::
-
-  
-
-
-    
 - RStudio Connect
+
+  - Connect to <https://shiny.stat.duke.edu>
 
 - Email aliases - [stat.duke.edu/resources/email/aliases](https://stat.duke.edu/resources/email/aliases)
   
-- Departmental IT resources - [stat.duke.edu/it-support](https://stat.duke.edu/it-support)
+- Departmental IT resources - <https://stat.duke.edu/it-support>
 
-- Departmental Wiki - [wiki.stat.duke.edu](https://wiki.stat.duke.edu)
+- Departmental Wiki - <https://wiki.stat.duke.edu>
   - Must be on a Duke Network to access
   - Printer configuration details
 

@@ -1,6 +1,6 @@
 ---
 title: "Responsible research<br/>and reproducibility"
-subtitle: "2022 DSS Bootcamp"
+subtitle: "2023 DSS Bootcamp"
 author: "Colin Rundel"
 institute: ""
 date: "08-25-22"
@@ -219,7 +219,7 @@ friendly) markup language for creating pdf documents.
 ## What is Quarto?
 
 ::: center
-<p><a href="https://www.rstudio.com/conference/2022/keynotes/collaborate-with-quarto/?wvideo=7m445b2xot"><img src="https://embed-ssl.wistia.com/deliveries/b4390006aa8890b146341f04e5b319c1cd0f2db1.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=4287c7e0" width="800" height="450" style="width: 800px; height: 450px;"></a></p><p><a href="https://www.rstudio.com/conference/2022/keynotes/collaborate-with-quarto/?wvideo=7m445b2xot">rstudio::conf 2022 Keynotes - Hello Quarto: Share • Collaborate • Teach • Reimagine - RStudio</a></p>
+<p><a href="https://www.rstudio.com/conference/2023/keynotes/collaborate-with-quarto/?wvideo=7m445b2xot"><img src="https://embed-ssl.wistia.com/deliveries/b4390006aa8890b146341f04e5b319c1cd0f2db1.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=4287c7e0" width="800" height="450" style="width: 800px; height: 450px;"></a></p><p><a href="https://www.rstudio.com/conference/2023/keynotes/collaborate-with-quarto/?wvideo=7m445b2xot">rstudio::conf 2023 Keynotes - Hello Quarto: Share • Collaborate • Teach • Reimagine - RStudio</a></p>
 :::
 
 
@@ -267,11 +267,11 @@ friendly) markup language for creating pdf documents.
 
 - Tom Mock's [Intro to Quarto webinar](https://jthomasmock.github.io/quarto-2hr-webinar/)
 
-- RStudioConf 2022 workshops
+- RStudioConf 2023 workshops
 
-  - [Getting Started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)
+  - [Getting Started with Quarto](https://rstudio-conf-2023.github.io/get-started-quarto/)
   
-  - [From R Markdown to Quarto](https://rstudio-conf-2022.github.io/rmd-to-quarto/)
+  - [From R Markdown to Quarto](https://rstudio-conf-2023.github.io/rmd-to-quarto/)
 
 
 # Quarto / RMarkdown demo
@@ -304,7 +304,7 @@ You only need to install a package once, but you must load it with function
 
 ## A note on environments
 
-- Your R Markdown document and your Console do not share their global environments.
+- Your R Markdown / Quarto document and your Console do not share their global environments.
 
 - This is good for reproducibility, but can sometimes result in frustrating 
   errors.
@@ -427,7 +427,7 @@ knitr::include_graphics("images/stack_overflow.png")
 
 ## RStudio Workbench + Jupyter
 
-If you return to http://rstudio.stat.duke.edu:8787 you can launch a new session and select Jupyter Lab as your editor of choice.
+If you return to <https://rstudio.stat.duke.edu> you can launch a new session and select Jupyter Lab as your editor of choice.
 
 <br/><br/>
 
