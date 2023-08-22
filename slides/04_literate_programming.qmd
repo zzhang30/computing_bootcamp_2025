@@ -39,14 +39,91 @@ friendly) markup language for creating pdf documents.
 
 
  
-## What is Quarto?
+## RMarkdown vs Quarto
 
 ::: center
 <p><a href="https://www.rstudio.com/conference/2023/keynotes/collaborate-with-quarto/?wvideo=7m445b2xot"><img src="https://embed-ssl.wistia.com/deliveries/b4390006aa8890b146341f04e5b319c1cd0f2db1.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=4287c7e0" width="800" height="450" style="width: 800px; height: 450px;"></a></p><p><a href="https://www.rstudio.com/conference/2023/keynotes/collaborate-with-quarto/?wvideo=7m445b2xot">rstudio::conf 2023 Keynotes - Hello Quarto</a></p>
 :::
 
+## R Markdown / Quarto - Input
 
-## R Markdown / Quarto
+<br/>
+
+:::: {.columns}
+::: {.column width='50%'}
+R Markdown:
+````markdown
+---
+title: "Untitled"
+output: html_document
+date: "2023-08-22"
+---
+
+```{{r setup, include=FALSE}}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{{r cars}}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{{r pressure, echo=FALSE}}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+````
+:::
+
+::: {.column width='50%'}
+Quarto:
+````markdown
+---
+title: "Untitled"
+format: html
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{{r}}
+1 + 1
+```
+
+You can add options to executable code like this 
+
+```{{r}}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+````
+:::
+::::
+
+
+
+
+
+
+## R Markdown / Quarto - Output
 
 :::: {.columns}
 

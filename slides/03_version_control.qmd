@@ -69,7 +69,7 @@ If you cannot access RStudio via the DSS servers:
 - Use a Docker container from Duke OIT
 
     1.  Go to <https://cmgr.oit.duke.edu/> and login
-    2.  Select `Reserve a Container` and find `RStudio - statistics application with Rmarkdown and knitr support`
+    2.  Select `Reserve a Container` and find `RStudio (statistics application with Rmarkdown and knitr support)`
     3.  Click the link under my reservations to create your environment
 
 - Install R and RStudio locally on your computer
@@ -198,11 +198,15 @@ You will need to do this configuration once on each machine in which you use git
 This can also be done via the terminal with,
 
 ```{bash eval=FALSE}
-$ git config --global user.name "Colin Rundel"
-$ git config --global user.email "rundel@gmail.com"
-$ git config --global push.default simple
+git config --global user.name "Colin Rundel"
+git config --global user.email "rundel@gmail.com"
+git config --global push.default simple
 ```
 
+
+::: aside
+All of these values will be saved in the `.gitconfig` file in your home directory
+:::
 
 ## Configure git verification
 
