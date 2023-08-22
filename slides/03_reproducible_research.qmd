@@ -90,18 +90,17 @@ Source: [retractionwatch.com/2014/07/01/bad-spreadsheet-merge-kills-depression-p
 :::
 
 
-## Teaching Reproducibility
-
-1. Convince researchers to adopt a reproducible research workflow.
-
-2. Train new researchers who don’t have any other workflow.
+## Reproducible vs Replicable
 
 
+![](images/leek_repro.jpeg){fig-align="center" width="45%"}
+
+::: {.aside}
+Source: Patil, Peng, Leek (2019) A visual tool for defining reproducibility and replicability. <i>Nature Human Behaviour</i>
+:::
 
 
-
-
-## Reproducibility checklist
+## Reproducibility in practice
 
 - Are the tables and figures reproducible from the code and data?
 <br><br>
@@ -118,9 +117,17 @@ were parameter settings chosen?)
 
 
 
+## Teaching Reproducibility
+
+1. Convince researchers to adopt a reproducible research workflow.
+
+2. Train new researchers who don’t have any other workflow.
+
+
+
 ## Ambitious goal
 
-We need an environment where
+We need an environment where:
 
 - data, analysis, and results are tightly connected, or better yet, 
 inseparable,
@@ -144,50 +151,60 @@ is comprehensible because its concepts have been introduced in an order
 that is best for human understanding, using a mixture of formal and 
 informal methods that reinforce each other."
 
+. . .
+
 - These ideas have been around for years!
 
 - Tools for putting them to practice have also been around.
 
 - They have never been as accessible as the current tools.
 
-## Toolkits
 
-:::: {.columns}
-::: {.column width='50%'}
-```{r echo=FALSE, out.width="50%", fig.align="center"}
-knitr::include_graphics("images/rmarkdown_logo.png")
-```
+
+
+
+## Reproducible data analysis stack
+
+<br/>
+
+
+:::: {.center}
+Scriptability
+
+::: {.fragment .col-blue}
+R / Python
 :::
 
-::: {.column width='50%'}
-```{r echo=FALSE, out.width="50%", fig.align="center"}
-knitr::include_graphics("images/jupyter.png")
-```
 :::
+
+<br/>
+<br/>
+<br/>
+
+:::: columns
+
+::: {.column width="50%"}
+Literate Programming
+
+::: {.fragment .col-blue}
+RMarkdown / Jupyter / Quarto
+:::
+
+:::
+
+::: {.right .column width="50%"}
+Version Control
+
+::: {.fragment .col-blue}
+Git / GitHub
+:::
+:::
+
 ::::
 
 . . .
 
-```{r echo=FALSE, out.width="50%", fig.align="center"}
-knitr::include_graphics("images/quarto.jpg")
-```
-
-
-
-
-
-
-## Reproducible data analysis
-
-- Scriptability $\rightarrow$ R / Python 
-
-- Literate programming $\rightarrow$ R Markdown / Jupyter Notebooks / Quarto
-
-- Version control $\rightarrow$ git / GitHub
-
-. . .
-
-<br><br>
+<br/>
 
 Could these tools have prevented some of the aforementioned retractions?
 
@@ -219,7 +236,7 @@ friendly) markup language for creating pdf documents.
 ## What is Quarto?
 
 ::: center
-<p><a href="https://www.rstudio.com/conference/2023/keynotes/collaborate-with-quarto/?wvideo=7m445b2xot"><img src="https://embed-ssl.wistia.com/deliveries/b4390006aa8890b146341f04e5b319c1cd0f2db1.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=4287c7e0" width="800" height="450" style="width: 800px; height: 450px;"></a></p><p><a href="https://www.rstudio.com/conference/2023/keynotes/collaborate-with-quarto/?wvideo=7m445b2xot">rstudio::conf 2023 Keynotes - Hello Quarto: Share • Collaborate • Teach • Reimagine - RStudio</a></p>
+<p><a href="https://www.rstudio.com/conference/2023/keynotes/collaborate-with-quarto/?wvideo=7m445b2xot"><img src="https://embed-ssl.wistia.com/deliveries/b4390006aa8890b146341f04e5b319c1cd0f2db1.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=4287c7e0" width="800" height="450" style="width: 800px; height: 450px;"></a></p><p><a href="https://www.rstudio.com/conference/2023/keynotes/collaborate-with-quarto/?wvideo=7m445b2xot">rstudio::conf 2023 Keynotes - Hello Quarto</a></p>
 :::
 
 
@@ -259,6 +276,7 @@ friendly) markup language for creating pdf documents.
 
 - Take a look at [RPubs](http://rpubs.com/) web published R Markdown documents.
 
+
 ## Quarto resources
 
 - Much of the syntax is shared with R Markdown - so previous resources are a good place to start
@@ -297,14 +315,13 @@ friendly) markup language for creating pdf documents.
   install.packages("tidyverse")
   ```
 
-You only need to install a package once, but you must load it with function
-`library()` each R session.
-
 
 
 ## A note on environments
 
 - Your R Markdown / Quarto document and your Console do not share their global environments.
+
+  - This is different than the computational model of Jupyter Notebooks!
 
 - This is good for reproducibility, but can sometimes result in frustrating 
   errors.
@@ -322,12 +339,11 @@ To get started,
 
 - try Rendering the entire document and examine the results.
 
-- try changing one or more of the selected countries, re-knit the document and observe any changes.
+- try changing one or more of the selected countries, re-render the document and observe any changes.
   
 - commit and push your changes to GitHub (include the newly generated `unvotes.html` file as well)
+
 <br/>
-
-
 
 
 ## R Markdown / quarto suggestions
@@ -369,10 +385,6 @@ These slides were made with quarto and `revealjs`.
     - [Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham
     - [R Packages](http://r-pkgs.had.co.nz/) by Hadley Wickham
 
-- Miscellaneous
-
-    -  All available [CRAN packages](https://cran.r-project.org/web/packages/available_packages_by_name.html), sorted by name
-
 
 
 ## More R / RStudio resources
@@ -402,14 +414,11 @@ Some of the above cheat sheets are available in RStudio: `Help > Cheatsheets`
 
 ## Why python?
 
-.center.middle[
+![](images/kd_nuggets.png){fig-align="center" width="80%"}
 
-![](images/kd_nuggets.png)
-
-]
-
-*Source*: https://www.kdnuggets.com/2020/06/data-science-tools-popularity-animated.html
-
+::: {.aside}
+*Source*: <https://www.kdnuggets.com/2020/06/data-science-tools-popularity-animated.html>
+:::
 
 
 ## Stack Overflow trends
@@ -418,9 +427,7 @@ To see how technologies have trended over time based on use of their
 tags since 2008 we can look at Stack Overflow trends.
 
 
-```{r echo=FALSE, out.width="66%"}
-knitr::include_graphics("images/stack_overflow.png")
-```
+![](images/stack_overflow.png){fig-align="center" width="66%"}
 
 
 
@@ -442,21 +449,18 @@ knitr::include_graphics("images/workbench_jupyter.png")
 
 Bimodal interface: edit mode and command mode
 
-<br>
+. . .
 
 Click in a cell or hit `enter` to enter edit mode
-.center[
-![](images/edit-mode.png)
-]
+
+![](images/edit-mode.png){fig-align="center" width="100%"}
 
 When in edit mode you can type code or write text with markdown.
 
-<br>
+. . .
 
 Hit `esc` to enter command mode
-.center[
-![](images/command_mode.png)
-]
+![](images/command_mode.png){fig-align="center" width="100%"}
 
 When in command mode you can make edits to the notebook, but not individual
 cells.
@@ -467,20 +471,20 @@ cells.
 
 In **edit** mode:
 
-- Run cell and add new cell: `shift + enter`
-- Add a line within a cell: `enter`
+- `shift + enter` - Run cell and add new cell
+- `enter` - Add a line within a cell
 
---
+. . .
 
 In **command** mode:
 
-- Save the notebook: `s`
-- Change cell to markdown: `m`
-- Change cell to code: `y`
-- Cut, copy, paste, delete a cell: `x`, `c`, `v`, `d`
-- Add a cell above, below: `a`, `b`
+- `s` - Save the notebook
+- `m` - Change cell to markdown
+- `y` - Change cell to code
+- `x`, `c`, `v`, `d` - Cut, copy, paste, delete a cell
+- `a`, `b` - Add a cell above, below
 
-<br><br>
+. . .
 
 The point-and-click interface is also an option to execute these commands.
 
@@ -543,10 +547,17 @@ To get started,
 Quarto was build to unify the scientific publish process across the most commonly used notebook formats and this include Jupyter notebooks.
 
 Specifically, quarto has a couple of neat tricks:
+
 - Render `ipynb` files using the jupyter engine
-
+  ```
+  quarto render unvotes.ipynb --execute
+  quarto render unvotes.ipynb --execute --to pdf
+  ```
+  
 - Converts between `ipynb` and `qmd` files seamlessly
-
+  ```
+  quarto convert unvotes.ipynb
+  ```
 
 ## Additional Python resources
 
@@ -570,7 +581,4 @@ Specifically, quarto has a couple of neat tricks:
     - [Python Package Index](https://pypi.org)
     - [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/runestone/books/published/pythonds/index.html)
 
-- Miscellaneous
-
-    - [Python 3 Module of the Week](https://pymotw.com/3/)
 
