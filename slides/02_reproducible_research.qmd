@@ -1,0 +1,217 @@
+---
+title: "Responsible research<br/>and reproducibility"
+subtitle: "2023 DSS Bootcamp"
+author: "Colin Rundel"
+institute: ""
+date: "08-25-22"
+format: 
+  revealjs:
+    self-contained: true
+    slide-number: true
+    highlight-style: a11y
+    theme: [default, custom.scss]
+execute:
+  echo: true
+---
+
+# Some case studies
+
+
+## Bad spreadsheet merge kills depression paper, quick fix resurrects it
+
+- The authors informed the journal that the merge of lab results and other 
+survey data used in the paper resulted in an error regarding the 
+identification codes. Results of the analyses were based on the data set 
+in which this error occurred. Further analyses established the results 
+reported in this manuscript and interpretation of the data are not correct.
+
+- **Original conclusion:** Lower levels of CSF IL-6 were associated with 
+current depression and with future depression [...].
+
+- **Revised conclusion:** Higher levels of CSF IL-6 and IL-8 were 
+associated with current depression [...].
+
+::: aside
+Source: <http://retractionwatch.com/2014/07/01/bad-spreadsheet-merge-kills-depression-paper-quick-fix-resurrects-it/>
+:::
+
+
+## Study of social media retracted when authors can’t provide data
+
+> A business journal has retracted a 2016 paper about how social media can
+  encourage young consumers to become devoted to particular brands, after
+  discovering flaws in the data and findings.
+
+- Reasons for retraction:
+
+  - Error in data
+  - Error in results and/or conclusions
+  - Results not reproducible
+
+
+::: aside
+*Source*: <http://retractionwatch.com/2017/07/31/study-social-media-retracted-authors-cant-provide-data/>
+:::
+
+
+## Heart pulls sodium meta-analysis over duplicated, and now missing, data
+
+The journal Heart has retracted a 2012 meta-analysis after learning that 
+  two of the six studies included in the review contained duplicated data.
+  Those studies, it so happens, were conducted by one of the co-authors.
+
+> The Committee considered that without sight of 
+  the raw data on which the two papers containing the duplicate data were based,
+  their reliability could not be substantiated. Following inquiries, it turns 
+  out that the raw data are no longer available having been lost as a result of
+  computer failure.
+
+
+:::aside
+*Source*: [retractionwatch.com/2013/05/02/heart-pulls-sodium-meta-analysis-over-duplicated-and-now-missing-data/](http://retractionwatch.com/2013/05/02/heart-pulls-sodium-meta-analysis-over-duplicated-and-now-missing-data/)
+:::
+
+
+## Evidence of Fraud in an Influential Field Experiment About Dishonesty 
+
+In 2022 the paper “*Signing at the beginning makes ethics salient and decreases dishonest self-reports in comparison to signing at the end*,” by Lisa L. Shu, Nina Mazar, Francesca Gino, Dan Ariely, and Max H. Bazerman from 2012 was retracted due to the discovery of issues of data fabrication with one of the reported studies (see [here](https://datacolada.org/98)).
+
+More recently additional evidence has been found of data fabrication within a different study by a different author.
+
+
+::: aside
+*Source*: http://datacolada.org/109
+:::
+
+##
+
+:::: {.columns}
+::: {.column width='50%'}
+![](images/gino1.png){fig-align="center" width="100%"}
+:::
+
+::: {.column width='50%' .fragment}
+![](images/gino2.png){fig-align="center" width="100%"}
+:::
+::::
+
+
+# Practice
+
+## Reproducible vs Replicable
+
+
+![](images/leek_repro.jpeg){fig-align="center" width="45%"}
+
+::: {.aside}
+Source: Patil, Peng, Leek (2019) A visual tool for defining reproducibility and replicability. <i>Nature Human Behaviour</i>
+:::
+
+
+## Reproducibility in practice
+
+- Are the tables and figures reproducible from the code and data?
+<br><br>
+- Does the code actually do what you think it does?
+<br><br>
+- In addition to what was done, is it clear *why* it was done? (e.g., how 
+were parameter settings chosen?)
+<br><br>
+- Can the code be used for other data, especially future updates to the
+  current data?
+<br><br>
+- Can you extend the code to do other things?
+<br><br>
+
+
+
+## Teaching Reproducibility
+
+1. Convince researchers to adopt a reproducible research workflow.
+
+2. Train new researchers who don’t have any other workflow.
+
+
+
+## Ambitious goal
+
+We need an environment where:
+
+- data, analysis, and results are tightly connected, or better yet, 
+inseparable,
+
+- reproducibility is built in,
+    + the original data remains untouched
+    + all data manipulations and analyses are inherently documented
+
+- documentation is human readable and syntax is minimal.
+
+
+## Donald Knuth "Literate Programming" (1983)
+
+"Let us change our traditional attitude to the construction of programs: 
+Instead of imagining that our main task is to instruct a *computer* what 
+to do, let us concentrate rather on explaining to *human beings* what we 
+want a computer to do."
+
+"The practitioner of literate programming [...] strives for a program that 
+is comprehensible because its concepts have been introduced in an order 
+that is best for human understanding, using a mixture of formal and 
+informal methods that reinforce each other."
+
+. . .
+
+- These ideas have been around for years!
+
+- Tools for putting them to practice have also been around.
+
+- They have never been as accessible as the current tools.
+
+
+
+
+
+## Reproducible data analysis stack
+
+<br/>
+
+
+:::: {.center}
+Scriptability
+
+::: {.fragment .col-blue}
+R / Python
+:::
+
+:::
+
+<br/>
+<br/>
+<br/>
+
+:::: columns
+
+::: {.column width="50%"}
+Literate Programming
+
+::: {.fragment .col-blue}
+RMarkdown / Jupyter / Quarto
+:::
+
+:::
+
+::: {.right .column width="50%"}
+Version Control
+
+::: {.fragment .col-blue}
+Git / GitHub
+:::
+:::
+
+::::
+
+. . .
+
+<br/>
+
+Could these tools have prevented some of the aforementioned retractions?

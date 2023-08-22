@@ -40,8 +40,7 @@ slide decks, and examples will serve to
 Your Duke NetID is the electronic key to making many Duke resources work.  
 Make sure your Duke Account has been setup.
 
-All of the following can be accomplished at 
-[idms-web.oit.duke.edu/portal/](https://idms-web.oit.duke.edu/portal/):
+All of the following can be accomplished at <https://idms-web-selfservice.oit.duke.edu/>:
 
   - Changing your password
   
@@ -76,7 +75,7 @@ Duke network connections:
 
 - DukeOpen:
 
-    - unencrypted wireless access for devices such as gaming systems, or 
+    - unencrypted wireless access for devices such as gaming systems, IOT, or 
       other devices
 
 - Eduroam (education roaming):
@@ -85,7 +84,14 @@ Duke network connections:
     
     - To use eduroam at a participating institution, configure 
       your machine ahead of time while at Duke - 
-      https://dukeblue.duke.edu/eduroam/.
+      <https://oit.duke.edu/service/eduroam/>.
+
+
+## Multi-factor authentication
+
+To access some resources on campus (e.g. mail, vpn, etc.) you will need to periodically undergo MFA when you login.
+
+This is relatively easy to setup using Duo or Duke Unlock - see instructions at <https://idms-mfa.oit.duke.edu/mfa/home>
 
 
 ## Duke VPN
@@ -97,7 +103,7 @@ Duke network connections:
 
 - Instructions to get started with the VPN are available on the next slide.
   For more information on Duke's VPN visit
-  https://oit.duke.edu/what-we-do/services/vpn.
+  <https://oit.duke.edu/what-we-do/services/vpn>.
 
 
 ## Duke VPN set-up
@@ -189,6 +195,7 @@ Duke OIT offers virtual software containers and semester-long virtual machines.
     - Run Windows or Linux VMs
     - Computing resources are light: 2 processors and 2GB of memory
     - By default each VM will power down at 6:00 am every morning
+      - Can be avoided if you have a reasonable use case
 
 
 ## Duke Compute Cluster
@@ -208,7 +215,7 @@ research. You will need to be given access before use.
 - Requires sponsorship by a faculty member to use
 
 The [DCC User Guide](https://rc.duke.edu/dcc/dcc-user-guide/) will help you
-get up and running. They also host workshops to help new users.
+get up and running. They also host [workshops](https://oit-rc.pages.oit.duke.edu/rcsupportdocs/help/training/) to help new users monthly.
 
 
 ## Getting help with Duke resources
@@ -232,7 +239,7 @@ infrastructure and application support.
 
 ## RStudio Workbench
 
-The DSS has an RStudio Workbench (formerly Pro) license that will allow you to connect to an instance of RStudio (or Jupyter Lab or VS Code) in your browser while making use of the computing power of a remote multiprocessor server.
+The DSS has an Posit / RStudio Workbench (formerly Pro) license that will allow you to connect to an instance of RStudio (or Jupyter Lab or VS Code) in your browser while making use of the computing power of a remote multiprocessor server.
 
 To access RStudio Pro:
 
@@ -249,37 +256,35 @@ To access RStudio Pro:
 
 - Local file system on DSS servers
 
-  - Connect via SSH to `rstudio.stat.duke.edu`
+  - Connect via SSH 
+  ```
+  ssh cr173@ssh.stat.duke.edu
+  ```
   
 - RStudio Connect
 
   - Connect to <https://shiny.stat.duke.edu>
 
-- Email aliases - [stat.duke.edu/resources/email/aliases](https://stat.duke.edu/resources/email/aliases)
-  
 - Departmental IT resources - <https://stat.duke.edu/it-support>
 
 - Departmental Wiki - <https://wiki.stat.duke.edu>
-  - Must be on a Duke Network to access
   - Printer configuration details
 
 
 ## Getting help with DSS resources
 
 The best way to get help with DSS computing resources is to email 
-[stat-help@duke.edu](mailto:stat-help@duke.edu). One of our great IT staff
-members will get back with you ASAP.
+[stat-help@duke.edu](mailto:stat-help@duke.edu).
   
 [Zoyia Melton](https://stat.duke.edu/people/zoyia-melton) - Senior IT Analyst
 
   - Phone: (919) 684-5419
-  - Location: 027 Old Chemistry
 
 Science Drive - Academic Technology Support
 
   - [tts-sciencehelp@duke.edu](mailto:tts-sciencehelp@duke.edu)
   - Phone: (919) 684-2200
-  - [oit.duke.edu/academic-technology-support-science-drive](https://oit.duke.edu/academic-technology-support-science-drive)
+  - <https://oit.duke.edu/academic-technology-support-science-drive>
 
 
-If you are having trouble getting support contact the department's computing committee [stat-cc@duke.edu](mailto:stat-cc@duke.edu).
+If you are having trouble getting support contact the department's computing committee [stat-cc@duke.edu](mailto:stat-cc@duke.edu) or myself.
