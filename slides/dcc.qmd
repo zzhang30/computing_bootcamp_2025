@@ -1,0 +1,277 @@
+---
+title: "Duke Compute Cluster (DCC)"
+subtitle: "2024 DSS Bootcamp"
+author: "Dr. Alexander Fisher"
+date: "August 16, 2024"
+format: 
+  revealjs:
+    self-contained: true
+    slide-number: true
+    highlight-style: a11y
+    theme: [default, custom.scss]
+    html:
+    code-line-numbers: false
+execute:
+  echo: true
+---
+
+# Connect and run your first job
+
+## To connect to DCC
+
+::: panel-tabset
+## Mac / Linux
+
+1.  Open terminal, and type the following:
+
+```{bash}
+#| eval: false
+ssh netid@dcc-login.oit.duke.edu
+```
+
+## Windows
+
+1.  Open command prompt, and type the following:
+
+```{bash}
+#| eval: false
+    ssh netid@dcc-login.oit.duke.edu
+```
+:::
+
+. . .
+
+2.  Enter your passcode and complete two-factor authentication
+
+. . .
+
+After successful login, you will see
+
+```
+userid@dcc-login  ~ $
+```
+
+indicating that you are on a **login** node.
+
+. . .
+
+::: callout-warning
+Do **not** run code from the login node! The login node is only job submission,  job monitoring and other lightweight tasks such as small file transfers and script editing.
+:::
+
+## To reserve a compute node
+
+```{bash}
+#| eval: false
+srun --pty bash -i
+```
+
+This is a standard command in Slurm (Simple Linux Utility for Resource Management) to queue and run a job. Slurm is a workload manager (a collection of tools) designed to help you interact with a compute cluster.
+
+-   `srun` runs a parallel job
+
+-   `--pty` lets you interact with the node
+
+-   `bash` is the terminal environment to interact with
+
+. . .
+
+Read more about slurm from official documentation:\
+<https://slurm.schedmd.com/overview.html>
+
+## To run code
+
+. . .
+
+First you must make sure the correct *module* is loaded. For example, if you wish to run R, you must first load a version of R. To see available versions, type
+
+```{bash}
+#| eval: false
+module avail R
+```
+
+
+. . .
+
+Next, load a module,
+
+```{bash}
+#| eval: false
+module load R/4.4.0
+```
+
+
+. . .
+
+Finally, call R by typing
+
+```{bash}
+#| eval: false
+R
+```
+
+
+. . .
+
+Now you can run actual R code!
+
+```{r}
+#| code-line-numbers: true
+rnorm(5)
+```
+
+. . .
+
+To close the R session,
+
+```{r}
+#| code-line-numbers: true
+#| eval: false
+quit()
+```
+
+## To close a node
+
+```{bash}
+#| eval: false
+exit 0
+```
+
+# Files and job deployment
+
+## File structure and unix commands
+
+```{css}
+#| echo: false
+
+.reveal section p {
+  font-size: 0.6em;
+}
+
+.reveal table {
+  font-size: 12pt;
+}
+
+```
+
+A "folder" aka a "directory" is a holding place for files.
+
+A "file\* is an element of a directory, e.g. `/hpc/home/username/test.r` is a file contained in the `username` directory. The `username` directory is inside of the `home` directory.
+
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| command                          | action                                                                                                                         |
++==================================+================================================================================================================================+
+| `$ ls`                           | list files in current directory                                                                                                |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ pwd`                          | print working directory                                                                                                        |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ cd`                           | change directory\                                                                                                              |
+|                                  | example: `$ cd ..` to go to parent directory                                                                                   |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ mkdir dname`                  | make directory "dname"                                                                                                         |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ mkdir s{1..5}`                | overpowered file creation                                                                                                      |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ rm /path/to/file`             | remove a file                                                                                                                  |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ rm -rf dname`                 | recursively remove a directory and its contents                                                                                |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ rm core*`                     | remove all objects in the current working directory that begin with "core"                                                     |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ wc -l`                        | show \# lines in a file                                                                                                        |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ y > x.txt`                    | pass printed output from command "y" on the left to file "x.txt" on the right\                                                 |
+|                                  | example: `$ head -N file1.txt > file2.txt` creates a new file called "file2" that is a replica of the first N lines of file 1\ |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ echo 'text here' >> filename` | add text to the end of a file                                                                                                  |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ man x`                        | pull up documentation for command x, example: `$ man ls`                                                                       |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+
+## Git on the Cluster
+
+
+#### Setting up GitHub
+
+[https://github.com/DukeStatSci/github_auth_guide](https://github.com/DukeStatSci/github_auth_guide)
+
+#### Pulling files
+
+. . .
+
+```{bash}
+#| eval: false
+git clone https://github.com/DukeStatSci/computing_bootcamp_2024.git
+```
+
+. . .
+
+You can now run, e.g. 
+
+```{bash}
+#| eval: false
+Rscript path-to-file/test.R
+```
+
+::: callout-note 
+## Exercise
+What is the correct `path-to-file`?
+:::
+## Submitting a job
+
+What if you have multiple files to run? Or what if you have a non-trivial file to run that takes some time? You can't keep an interactive session open for ever.
+
+. . .
+
+The solution is to submit a job, that will run even after you log out of DCC. For this, we will create a shell script.
+
+. . . 
+
+```{bash}
+#| eval: false
+#!/bin/bash
+#SBATCH --error slurm_%a.err   #error message
+#SBATCH --partition=common
+#SBATCH --output=file-screen-log.output   #screen log
+#SBATCH --mem-per-cpu=1G   #adjust as needed
+Rscript path-to-file/test.R
+```
+
+::: callout-note
+## Exercise
+1. Save the script above as `test-job.sh`
+1. change `file-screen-log.output` to something more meaningful
+3. update `path-to-file`. Note this must be relative to where `.sh` script is located
+4. run `sbatch test-job.sh`
+:::
+
+. . . 
+
+Upon successful submission, you should see "Submitted batch job X" where X is some unique id associated with the job.
+
+. . .
+
+Check out the resulting files with `ls`. For further reading, see the DCC user guide: 
+[https://dcc.duke.edu/dcc/slurm/](https://dcc.duke.edu/dcc/slurm/).
+
+## Getting files off the server
+
+```{bash}
+#| eval: false
+scp <netid>@dcc-login.oit.duke.edu:<dccpath.filename> <localpath>
+```
+
+. . . 
+
+More specifically, if `test-output.txt` is located in your `~` directory on the cluster, you can run
+
+```{bash}
+#| eval: false
+scp netid@dcc-login.oit.duke.edu:~/test-output.txt ./
+```
+
+in your local terminal or command prompt.
+
+For more options, see documentation about working with files on the cluster: [https://oit-rc.pages.oit.duke.edu/rcsupportdocs/dcc/files/#how-should-i-use-dcc-storage](https://oit-rc.pages.oit.duke.edu/rcsupportdocs/dcc/files/#how-should-i-use-dcc-storage)
+
+For info about a popular GUI for file transfers, check out [https://cyberduck.io/download/](https://cyberduck.io/download/)
