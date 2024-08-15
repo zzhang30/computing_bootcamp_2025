@@ -1,14 +1,13 @@
 ---
 title: "Introduction &<br/>Computing Resources"
-subtitle: "2023 DSS Bootcamp"
-author: "Colin Rundel"
+subtitle: "2024 DSS Bootcamp"
+author: "Dr. Alexander Fisher"
 institute: ""
-date: "08-23-23"
+date: "August 16, 2024"
 format: 
   revealjs:
     self-contained: true
     slide-number: true
-    highlight-style: a11y
     theme: [default, custom.scss]
 execute:
   echo: true
@@ -17,20 +16,25 @@ execute:
 
 ## Welcome
 
-Welcome to the Department of Statistical Science (DSS). The following slides,
-slide decks, and examples will serve to
+Welcome to the Department of Statistical Science (DSS).
 
-- give you an understanding of the computing resources available to you within 
-  the DSS and Duke University;
-  
-- inform you on the best way to get help with your computing needs within the 
-  DSS and Duke University;
-  
-- introduce you to R, Python, and version control with Git/GitHub;
+You can find all slides and source code at  
+[https://github.com/DukeStatSci/computing_bootcamp_2024](https://github.com/DukeStatSci/computing_bootcamp_2024).
 
-- highlight the importance of reproducible research and how the aforementioned
-  software can help.
+By the end of today's workshop you will
 
+- understand the computing resources available to you within 
+  the DSS and Duke University as well as how to get help when needed
+
+- work with containerized versions of R and Python and understand the importance of literate programming and reproducible research
+
+- collaborate and manage your work via version control with git/GitHub
+
+- setup and run jobs on Duke Compute Cluster (DCC)
+
+# Thanks 
+
+Special thank you to Prof. Colin Rundel for this slide deck.
 
 # Duke Computing Resources
 
@@ -38,7 +42,6 @@ slide decks, and examples will serve to
 ## Duke NetID
 
 Your Duke NetID is the electronic key to making many Duke resources work.  
-Make sure your Duke Account has been setup.
 
 All of the following can be accomplished at <https://idms-web-selfservice.oit.duke.edu/>:
 
@@ -208,14 +211,13 @@ research. You will need to be given access before use.
 
 - Offers over 1300 nodes with more than 30,000 cores, 750 GPUs, 200 TBs of RAM and 7 PB file system.
 
-- Most nodes are purchased by labs and departments. The DSS has three nodes (more soon).
+- Most nodes are purchased by labs and departments.
 
 - [OnDemand](https://dcc-ondemand-01.oit.duke.edu/) for interactive use
 
-- Requires sponsorship by a faculty member to use
+- Requires sponsorship by a faculty member to use (you all have access currently)
 
-The [DCC User Guide](https://rc.duke.edu/dcc/dcc-user-guide/) will help you
-get up and running. They also host [workshops](https://oit-rc.pages.oit.duke.edu/rcsupportdocs/help/training/) to help new users monthly.
+Duke Office of Information Technology (OIT) offers a host of resources, including  [workshops](https://oit-rc.pages.oit.duke.edu/rcsupportdocs/help/training/) to help new users. 
 
 
 ## Getting help with Duke resources
@@ -258,7 +260,7 @@ To access RStudio Pro:
 
   - Connect via SSH 
   ```
-  ssh cr173@ssh.stat.duke.edu
+  ssh netid@ssh.stat.duke.edu
   ```
   
 - RStudio Connect
@@ -287,4 +289,4 @@ Science Drive - Academic Technology Support
   - <https://oit.duke.edu/academic-technology-support-science-drive>
 
 
-If you are having trouble getting support contact the department's computing committee [stat-cc@duke.edu](mailto:stat-cc@duke.edu) or myself.
+If you are having trouble getting support contact the department's computing committee [stat-cc@duke.edu](mailto:stat-cc@duke.edu) or [Prof. Colin Rundel](mailto:cr173@duke.edu).
