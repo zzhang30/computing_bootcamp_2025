@@ -188,7 +188,7 @@ A "file\* is an element of a directory, e.g. `/hpc/home/username/test.r` is a fi
 | `$ man x`                        | pull up documentation for command x, example: `$ man ls`                                                                       |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
-## Git on the Cluster
+## Git on the cluster
 
 
 #### Setting up GitHub
