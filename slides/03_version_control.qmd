@@ -17,13 +17,7 @@ execute:
 
 ## GitHub account
 
-```{css}
-#| echo: false
-.reveal section p {
-  font-size: 0.8em;
-}
-```
-
+::: {style="font-size: 80%;"}
 - Create a GitHub account (unless you already have one) on [https://github.com/](https://github.com/)
 
 - one day you might want to show off your work, so choose a username you will be proud to show to a future employer.
@@ -39,7 +33,7 @@ Some suggestions:
   - Make it timeless. Don't highlight your current university, employer, or place of residence.
 
   - Avoid words laden with special meaning in programming.
-
+:::
 
 ## Accessing RStudio Workbench
 
