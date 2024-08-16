@@ -1,14 +1,13 @@
 ---
 title: "Version Control"
-subtitle: "2023 DSS Bootcamp"
-author: "Colin Rundel"
+subtitle: "2024 DSS Bootcamp"
+author: "Alexander Fisher"
 institute: ""
-date: "08-23-23"
+date: "August 16, 2024"
 format: 
   revealjs:
     self-contained: true
     slide-number: true
-    highlight-style: a11y
     theme: [default, custom.scss]
 execute:
   echo: true
@@ -18,28 +17,28 @@ execute:
 
 ## GitHub account
 
-To get everyone on the same page:
+```{css}
+#| echo: false
+.reveal section p {
+  font-size: 0.8em;
+}
+```
 
-- If you don't have one, sign up for a GitHub account (it takes 1 min.)
-    - Go to [github.com/join](https://github.com/join)
-    - Enter your information (username, email address and a password).
+- Create a GitHub account (unless you already have one) on [https://github.com/](https://github.com/)
 
+- one day you might want to show off your work, so choose a username you will be proud to show to a future employer.
 
-## Account names
+Some suggestions: 
 
-A few suggestions on picking a GitHub username:
+  - Incorporate your actual name.
 
-- Incorporate your actual name! People like to know who they're dealing with. It makes your username easier for people to guess or remember.
+  - Shorter is better than longer.
 
-- Pick a username you will be comfortable revealing to your future boss.
+  - Be as unique as possible in as few characters as possible. In some settings GitHub auto-completes or suggests usernames.
 
-- Shorter is better than longer.
+  - Make it timeless. Don't highlight your current university, employer, or place of residence.
 
-- Be as unique as possible in as few characters as possible. In some settings GitHub auto-completes or suggests usernames.
-
-- Make it timeless. Don't highlight your current university, employer, or place of residence.
-
-- Avoid words laden with special meaning in programming.
+  - Avoid words laden with special meaning in programming.
 
 
 ## Accessing RStudio Workbench
@@ -80,9 +79,7 @@ If you cannot access RStudio via the DSS servers:
 
 ## Bootcamp materials
 
-- Everything from this computing bootcamp is available at <https://dukestatsci.github.io/computing_bootcamp_2023/>
-
-- GitHub repo is available at <https://github.com/dukestatsci/computing_bootcamp_2023>
+- Everything from this computing bootcamp is available in the GitHub repository: [https://github.com/dukestatsci/computing_bootcamp_2024](https://github.com/dukestatsci/computing_bootcamp_2024)
 
 - You'll learn how to get this on your computer shortly.
 
@@ -272,7 +269,7 @@ In order to get started, you need to obtain today's files from GitHub. The steps
 
 1.  Log in to GitHub
 
-2.  Navigate to <https://github.com/dukestatsci/computing_bootcamp_2023>
+2.  Navigate to <https://github.com/dukestatsci/computing_bootcamp_2024>
 
 3.  Fork the repository
 
@@ -330,7 +327,6 @@ We will now make sure that everything is working correctly by making changes to 
 
 - Communicate with your team.
 
-
 ## git and GitHub resources
 
 - git's [Pro Git](https://git-scm.com/book/en/v2) book, Chapters [Getting Started](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) and [Git Basics](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) will be most useful if you are new to git and GitHub
@@ -342,3 +338,4 @@ We will now make sure that everything is working correctly by making changes to 
 - [Free online course](https://www.udacity.com/course/version-control-with-git--ud123) from Udacity
 
 - [Happy Git with R](http://happygitwithr.com/) by Jenny Bryan
+
