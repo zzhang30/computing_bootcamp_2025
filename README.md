@@ -15,3 +15,7 @@ Mine Çetinkaya-Rundel and Colin Rundel.
 | Literate Programming | [:desktop_computer:](https://dukestatsci.github.io/computing_bootcamp_2024/slides/04_literate_programming.html)  | 
 | Duke Compute Cluster (DCC)               | [:desktop_computer:](https://dukestatsci.github.io/computing_bootcamp_2024/slides/05_dcc.html)            |
 
+A video recording of a portion of the bootcamp today, recorded and added by popular request:
+[📹](https://duke.zoom.us/rec/share/Nw5or7vkQwzIIi_OswT3QYWTzvFQ5rL5U3O0qApAZuwWzfjD25virmV3re4ijFvu.25nuNMLBOMN29WeB)
+
+The recording starts a few minutes after the break and roughly covers: (1) recap of setting up git, committing and pushing from terminal (2) RStudio and Python container accession (3) Useful unix commands and file system recap and (4) interacting with DCC.
