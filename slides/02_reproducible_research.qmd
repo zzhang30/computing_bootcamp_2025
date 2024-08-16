@@ -1,14 +1,13 @@
 ---
 title: "Responsible research<br/>and reproducibility"
-subtitle: "2023 DSS Bootcamp"
-author: "Colin Rundel"
+subtitle: "2024 DSS Bootcamp"
+author: "Alexander Fisher"
 institute: ""
-date: "08-25-22"
+date: "August 16, 2024"
 format: 
   revealjs:
     self-contained: true
     slide-number: true
-    highlight-style: a11y
     theme: [default, custom.scss]
 execute:
   echo: true
@@ -36,7 +35,7 @@ Source: <http://retractionwatch.com/2014/07/01/bad-spreadsheet-merge-kills-depre
 :::
 
 
-## Study of social media retracted when authors can’t provide data
+## Study of social media retracted when authors can't provide data
 
 > A business journal has retracted a 2016 paper about how social media can
   encourage young consumers to become devoted to particular brands, after
@@ -55,6 +54,7 @@ Source: <http://retractionwatch.com/2014/07/01/bad-spreadsheet-merge-kills-depre
 
 
 ## Heart pulls sodium meta-analysis over duplicated, and now missing, data
+
 
 The journal Heart has retracted a 2012 meta-analysis after learning that 
   two of the six studies included in the review contained duplicated data.
@@ -83,29 +83,7 @@ More recently additional evidence has been found of data fabrication within a di
 *Source*: http://datacolada.org/109
 :::
 
-##
-
-:::: {.columns}
-::: {.column width='50%'}
-![](images/gino1.png){fig-align="center" width="100%"}
-:::
-
-::: {.column width='50%' .fragment}
-![](images/gino2.png){fig-align="center" width="100%"}
-:::
-::::
-
-
 # Practice
-
-## Reproducible vs Replicable
-
-
-![](images/leek_repro.jpeg){fig-align="center" width="45%"}
-
-::: {.aside}
-Source: Patil, Peng, Leek (2019) A visual tool for defining reproducibility and replicability. <i>Nature Human Behaviour</i>
-:::
 
 
 ## Reproducibility in practice
@@ -122,15 +100,6 @@ were parameter settings chosen?)
 <br><br>
 - Can you extend the code to do other things?
 <br><br>
-
-
-
-## Teaching Reproducibility
-
-1. Convince researchers to adopt a reproducible research workflow.
-
-2. Train new researchers who don’t have any other workflow.
-
 
 
 ## Ambitious goal
@@ -213,5 +182,3 @@ Git / GitHub
 . . .
 
 <br/>
-
-Could these tools have prevented some of the aforementioned retractions?

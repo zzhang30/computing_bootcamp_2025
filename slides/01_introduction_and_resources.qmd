@@ -18,10 +18,10 @@ execute:
 
 Welcome to the Department of Statistical Science (DSS).
 
-You can find all slides and source code at  
+Find all slides and source code at  
 [https://github.com/DukeStatSci/computing_bootcamp_2024](https://github.com/DukeStatSci/computing_bootcamp_2024).
 
-By the end of today's workshop you will
+By the end of today's workshop, you will
 
 - understand the computing resources available to you within 
   the DSS and Duke University as well as how to get help when needed
@@ -34,7 +34,7 @@ By the end of today's workshop you will
 
 # Thanks 
 
-Special thank you to Prof. Colin Rundel for this slide deck.
+Special thank you to Prof. Colin Rundel and Prof. Mine Çetinkaya-Rundel for developing a large portion of the content I am delivering to you to today.
 
 # Duke Computing Resources
 

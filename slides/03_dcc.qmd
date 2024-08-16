@@ -7,7 +7,6 @@ format:
   revealjs:
     self-contained: true
     slide-number: true
-    highlight-style: a11y
     theme: [default, custom.scss]
     html:
     code-line-numbers: false
