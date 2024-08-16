@@ -1267,7 +1267,7 @@ display: none;
 <div class="tab-content">
 <div id="tabset-1-1">
 <ol type="1">
-<li>Open terminal, and type the following:</li>
+<li>Open terminal and type the following:</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> netid@dcc-login.oit.duke.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1275,10 +1275,10 @@ display: none;
 </div>
 <div id="tabset-1-2">
 <ol type="1">
-<li>Open command prompt, and type the following:</li>
+<li>Open command prompt and type the following:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ssh</span> netid@dcc-login.oit.duke.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> netid@dcc-login.oit.duke.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1350,7 +1350,7 @@ display: none;
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8" data-code-line-numbers="true"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">rnorm</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.84498636  0.09643862 -0.32894614 -1.32487799 -0.35604226</code></pre>
+<pre><code>[1]  0.8569864 -0.2224654 -1.2851999  0.1685456 -0.1084965</code></pre>
 </div>
 </div>
 </div>
@@ -1377,18 +1377,16 @@ display: none;
 <div class="cell">
 
 <style type="text/css">
-.reveal section p {
-  font-size: 0.6em;
-}
-
 .reveal table {
   font-size: 12pt;
 }
 
 </style>
 </div>
+<div style="font-size: 70%;">
 <p>A “folder” aka a “directory” is a holding place for files.</p>
 <p>A “file* is an element of a directory, e.g. <code>/hpc/home/username/test.r</code> is a file contained in the <code>username</code> directory. The <code>username</code> directory is inside of the <code>home</code> directory.</p>
+</div>
 <table>
 <colgroup>
 <col style="width: 21%">
@@ -1500,6 +1498,10 @@ example: <code>$ head -N file1.txt &gt; file2.txt</code> creates a new file call
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem-per-cpu=1G   #adjust as needed</span></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> path-to-file/test.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</section>
+<section id="practice" class="slide level2">
+<h2>Practice</h2>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1510,12 +1512,11 @@ example: <code>$ head -N file1.txt &gt; file2.txt</code> creates a new file call
 </div>
 <div class="callout-content">
 <ol type="1">
-<li>Save the script above as <code>test-job.sh</code></li>
+<li>Save the script on the previous slide as <code>test-job.sh</code></li>
 <li>change <code>file-screen-log.output</code> to something more meaningful</li>
 <li>update <code>path-to-file</code>. Note this must be relative to where <code>.sh</code> script is located</li>
 <li>run <code>sbatch test-job.sh</code></li>
 </ol>
-</div>
 </div>
 </div>
 </div>

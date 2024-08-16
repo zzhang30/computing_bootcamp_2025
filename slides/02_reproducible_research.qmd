@@ -1,7 +1,7 @@
 ---
 title: "Responsible research<br/>and reproducibility"
 subtitle: "2024 DSS Bootcamp"
-author: "Alexander Fisher"
+author: "Dr. Alexander Fisher"
 institute: ""
 date: "August 16, 2024"
 format: 

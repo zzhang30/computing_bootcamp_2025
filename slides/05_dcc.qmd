@@ -8,7 +8,6 @@ format:
     self-contained: true
     slide-number: true
     theme: [default, custom.scss]
-    html:
     code-line-numbers: false
 execute:
   echo: true
@@ -21,7 +20,7 @@ execute:
 ::: panel-tabset
 ## Mac / Linux
 
-1.  Open terminal, and type the following:
+1.  Open terminal and type the following:
 
 ```{bash}
 #| eval: false
@@ -30,11 +29,11 @@ ssh netid@dcc-login.oit.duke.edu
 
 ## Windows
 
-1.  Open command prompt, and type the following:
+1.  Open command prompt and type the following:
 
 ```{bash}
 #| eval: false
-    ssh netid@dcc-login.oit.duke.edu
+ssh netid@dcc-login.oit.duke.edu
 ```
 :::
 
@@ -139,13 +138,8 @@ exit 0
 # Files and job deployment
 
 ## File structure and unix commands
-
 ```{css}
 #| echo: false
-
-.reveal section p {
-  font-size: 0.6em;
-}
 
 .reveal table {
   font-size: 12pt;
@@ -153,10 +147,11 @@ exit 0
 
 ```
 
+::: {style="font-size: 70%;"}
 A "folder" aka a "directory" is a holding place for files.
 
 A "file\* is an element of a directory, e.g. `/hpc/home/username/test.r` is a file contained in the `username` directory. The `username` directory is inside of the `home` directory.
-
+:::
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | command                          | action                                                                                                                         |
 +==================================+================================================================================================================================+
@@ -218,6 +213,7 @@ What is the correct `path-to-file`?
 :::
 ## Submitting a job
 
+
 What if you have multiple files to run? Or what if you have a non-trivial file to run that takes some time? You can't keep an interactive session open for ever.
 
 . . .
@@ -236,9 +232,11 @@ The solution is to submit a job, that will run even after you log out of DCC. Fo
 Rscript path-to-file/test.R
 ```
 
+## Practice
+
 ::: callout-note
 ## Exercise
-1. Save the script above as `test-job.sh`
+1. Save the script on the previous slide as `test-job.sh`
 1. change `file-screen-log.output` to something more meaningful
 3. update `path-to-file`. Note this must be relative to where `.sh` script is located
 4. run `sbatch test-job.sh`

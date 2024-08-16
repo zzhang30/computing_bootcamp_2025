@@ -1,14 +1,13 @@
 ---
 title: "Literate Programming"
-subtitle: "2023 DSS Bootcamp"
-author: "Colin Rundel"
+subtitle: "2024 DSS Bootcamp"
+author: "Dr. Alexander Fisher"
 institute: ""
-date: "08-25-22"
+date: "August 16, 2024"
 format: 
   revealjs:
     self-contained: true
     slide-number: true
-    highlight-style: a11y
     theme: [default, custom.scss]
 execute:
   echo: true
@@ -35,19 +34,7 @@ friendly) markup language for creating pdf documents.
     and CSS.
   - Used by RMarkdown, Jupyter Notebooks, and Quarto
   
-    
-
-
- 
-## RMarkdown vs Quarto
-
-::: center
-<p><a href="https://www.rstudio.com/conference/2023/keynotes/collaborate-with-quarto/?wvideo=7m445b2xot"><img src="https://embed-ssl.wistia.com/deliveries/b4390006aa8890b146341f04e5b319c1cd0f2db1.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=4287c7e0" width="800" height="450" style="width: 800px; height: 450px;"></a></p><p><a href="https://www.rstudio.com/conference/2023/keynotes/collaborate-with-quarto/?wvideo=7m445b2xot">rstudio::conf 2023 Keynotes - Hello Quarto</a></p>
-:::
-
 ## R Markdown / Quarto - Input
-
-<br/>
 
 :::: {.columns}
 ::: {.column width='50%'}
@@ -224,7 +211,7 @@ To get started,
 
 - try changing one or more of the selected countries, re-render the document and observe any changes.
   
-- commit and push your changes to GitHub (include the newly generated `unvotes.html` file as well)
+- commit and push your changes to GitHub
 
 <br/>
 
@@ -250,6 +237,7 @@ These slides were made with quarto and `revealjs`.
 
 ## R programming resources
 
+::: {style="font-size: 80%;"}
 - Style
 
     - [Tidyverse style guide](http://style.tidyverse.org/)
@@ -268,7 +256,7 @@ These slides were made with quarto and `revealjs`.
     - [Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham
     - [R Packages](http://r-pkgs.had.co.nz/) by Hadley Wickham
 
-
+:::
 
 ## More R / RStudio resources
 
@@ -375,37 +363,26 @@ The point-and-click interface is also an option to execute these commands.
 
 ## Jupyter and Terminal
 
-- Jupyter Lab provides a direct interface to the terminal (similar to RStudio) under Launcher > Other
+- Jupyter Lab provides a direct interface to the terminal (similar to RStudio) under Other > Terminal
 
 - Terminal commands can also be included in notebooks by prefixing with `!`, e.g.
 
 ```python
 !pip install --user statsmodels
 ```
+. . . 
 
-
-
-## Jupyter and Git
-
-- The departmental server has the git jupyter lab [extension](https://github.com/jupyterlab/jupyterlab-git) installed.
-
-- This provides a GUI similar to RStudio's for interacting with Git repositories
-
-- Navigate to a repo's root directory and then switch to the Git pane.
-
-
+::: callout-note 
+## Exercise
+Clone the bootcamp repo from terminal and open `examples/unvotes.ipynb`.
+:::
 
 ## Unvotes data analysis
-
-To get started,
-
-- open `examples/unvotes.ipynb`,
 
 - Render the entire document by selecting Run > Run All Cells
 
 - Try changing one or more of the selected countries, rerunning the document, observe any changes.
 
-- commit and push your changes to GitHub (include the newly generated `unvotes.html` file as well)
 <br/>
 
 
@@ -443,6 +420,7 @@ Specifically, quarto has a couple of neat tricks:
   ```
 
 ## Additional Python resources
+::: {style="font-size: 80%;"}
 
 - Style
 
@@ -464,4 +442,5 @@ Specifically, quarto has a couple of neat tricks:
     - [Python Package Index](https://pypi.org)
     - [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/runestone/books/published/pythonds/index.html)
 
+:::
 
