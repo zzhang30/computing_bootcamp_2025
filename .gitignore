@@ -5,3 +5,5 @@
 .DS_Store
 examples/.ipynb_checkpoints/*
 slides/libs/*
+.claude/*
+CLAUDE.md
