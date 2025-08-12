@@ -1,9 +1,8 @@
 ---
 title: "Version Control"
-subtitle: "2024 DSS Bootcamp"
-author: "Dr. Alexander Fisher"
+subtitle: "2025 DSS Bootcamp"
+author: "Colin Rundel"
 institute: ""
-date: "August 16, 2024"
 format: 
   revealjs:
     self-contained: true
@@ -20,7 +19,7 @@ execute:
 ::: {style="font-size: 80%;"}
 - Create a GitHub account (unless you already have one) on [https://github.com/](https://github.com/)
 
-- one day you might want to show off your work, so choose a username you will be proud to show to a future employer.
+- One day you might want to show off your work, so choose a username you will be proud to show to a future employer.
 
 Some suggestions: 
 
@@ -62,7 +61,7 @@ If you cannot access RStudio via the DSS servers:
 - Use a Docker container from Duke OIT
 
     1.  Go to <https://cmgr.oit.duke.edu/> and login
-    2.  Select `Reserve a Container` and find `RStudio (statistics application with Rmarkdown and knitr support)`
+    2.  Select `Reserve a Container` and find `RStudio (statistics application with R Markdown and knitr support)`
     3.  Click the link under my reservations to create your environment
 
 - Install R and RStudio locally on your computer
@@ -73,7 +72,7 @@ If you cannot access RStudio via the DSS servers:
 
 ## Bootcamp materials
 
-- Everything from this computing bootcamp is available in the GitHub repository: [https://github.com/dukestatsci/computing_bootcamp_2024](https://github.com/dukestatsci/computing_bootcamp_2024)
+- Everything from this computing bootcamp is available in the GitHub repository: [https://github.com/dukestatsci/computing_bootcamp_2025](https://github.com/dukestatsci/computing_bootcamp_2025)
 
 - You'll learn how to get this on your computer shortly.
 
@@ -133,12 +132,13 @@ knitr::include_graphics("images/distributed-vc-system.png")
 git is already set-up on the DSS server(s). In the terminal tab you can verify this by running:
 
 ``` bash
-[cr173@numeric1 ~]$ git --version
+[cr173@hypatia ~]$ git --version
 git version 2.20.1
 ```
 
+
 ```{bash eval=FALSE}
-[cr173@numeric1 ~]$ which git
+[cr173@hypatia ~]$ which git
 /usr/bin/git
 ```
 
@@ -153,8 +153,10 @@ Within R we can also use the `usethis` package to get a helpful summary of the c
 
 ```{r}
 #| eval: false
-#| code-line-numbers: "|3,4"
 usethis::git_sitrep()
+```
+
+```
 ## Git config (global)
 ## ● Name: <unset>
 ## ● Email: <unset>
@@ -188,7 +190,7 @@ You will need to do this configuration once on each machine in which you use git
 
 This can also be done via the terminal with,
 
-```{bash eval=FALSE}
+```bash
 git config --global user.name "Colin Rundel"
 git config --global user.email "rundel@gmail.com"
 git config --global push.default simple
@@ -203,10 +205,10 @@ All of these values will be saved in the `.gitconfig` file in your home director
 
 To verify you configured git correctly, run
 
-```{r}
-#| eval: false
-#| code-line-numbers: "|3,4"
+```r
 usethis::git_sitrep()
+```
+```
 ## Git config (global)
 ## ● Name: 'Colin Rundel'
 ## ● Email: 'rundel@gmail.com'
@@ -234,8 +236,7 @@ credentials::ssh_setup_github()
 
 . . .
 
-```{r}
-#| code-line-numbers: "|1-4|6|7-16|10|18"
+```
 ## No SSH key found. Generate one now? 
 ## 
 ## 1: Yes
@@ -263,7 +264,7 @@ In order to get started, you need to obtain today's files from GitHub. The steps
 
 1.  Log in to GitHub
 
-2.  Navigate to <https://github.com/dukestatsci/computing_bootcamp_2024>
+2.  Navigate to <https://github.com/dukestatsci/computing_bootcamp_2025>
 
 3.  Fork the repository
 
@@ -300,7 +301,7 @@ You now should have all the files in the repository in a directory on the server
 
 We will now make sure that everything is working correctly by making changes to the `README.md` file in the repository.
 
-- Make a small change to `README.md` (i.e. add you name) and save the file.
+- Make a small change to `README.md` (i.e. add your name) and save the file.
 
 - Stage & commit that change using RStudio's git GUI
 

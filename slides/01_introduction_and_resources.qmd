@@ -1,9 +1,8 @@
 ---
 title: "Introduction &<br/>Computing Resources"
-subtitle: "2024 DSS Bootcamp"
-author: "Dr. Alexander Fisher"
+subtitle: "2025 DSS Bootcamp"
+author: "Colin Rundel"
 institute: ""
-date: "August 16, 2024"
 format: 
   revealjs:
     self-contained: true
@@ -18,7 +17,7 @@ execute:
 Welcome to the Department of Statistical Science (DSS).
 
 Find all slides and source code at  
-[https://github.com/DukeStatSci/computing_bootcamp_2024](https://github.com/DukeStatSci/computing_bootcamp_2024).
+[github.com/DukeStatSci/computing_bootcamp_2025](https://github.com/DukeStatSci/computing_bootcamp_2025).
 
 By the end of today's workshop, you will
 
@@ -31,16 +30,20 @@ By the end of today's workshop, you will
 
 - setup and run jobs on Duke Compute Cluster (DCC)
 
-# Thanks 
-
-Special thank you to Prof. Colin Rundel and Prof. Mine Çetinkaya-Rundel for developing a large portion of the content I am delivering to you to today.
-
 # Duke Computing Resources
 
 
 ## Duke NetID
 
-Your Duke NetID is the electronic key to making many Duke resources work.  
+Your Duke NetID is the electronic key for accessing most Duke resources.
+
+Most important resources are locked down behind the Duke login service shibboleth.
+
+![](images/shib.png){width=75% fig-align="center"}
+
+
+
+## OIT Self-Service
 
 All of the following can be accomplished at <https://idms-web-selfservice.oit.duke.edu/>:
 
@@ -48,7 +51,7 @@ All of the following can be accomplished at <https://idms-web-selfservice.oit.du
   
   - Changing your challenge questions
   
-  - Setup multi-factor authentication (Duo recommended)
+  - Set up multi-factor authentication (Duo recommended)
   
   - Change email alias(es)
   
@@ -70,23 +73,17 @@ With your NetID and password, you can access your email on the web at
 
 Duke network connections:
 
-- Dukeblue:
+- Dukeblue (**recommended**)
 
-    - 24-hour access to secure (encrypted) wireless throughout Duke's 
-      residence halls, academic and administrative buildings
+  - Secure wireless network for Duke students, faculty, and staff, requires device registration and authentication with your Duke NetID and password
 
-- DukeOpen:
+- DukeOpen 
+  
+  - "non-secured" network for miscellaneous devices such as printers, gaming consoles, or streaming TV devices that cannot otherwise be connected to the Dukeblue
 
-    - unencrypted wireless access for devices such as gaming systems, IOT, or 
-      other devices
+- eduroam (education roaming)
 
-- Eduroam (education roaming):
-
-    - secure (encrypted) wireless access using your Duke NetID and password
-    
-    - To use eduroam at a participating institution, configure 
-      your machine ahead of time while at Duke - 
-      <https://oit.duke.edu/service/eduroam/>.
+- Visitor
 
 
 ## Multi-factor authentication
@@ -177,12 +174,12 @@ Duke OIT offers virtual software containers and semester-long virtual machines.
 
 - [Virtual Software Containers](https://cmgr.oit.duke.edu/) – 
   Students and instructors can reserve personal computer environments running 
-  applications such as RStudio, Eclipse, Jupyter Notebooks, Matlab, and others for a semester. These are run through your
+  applications such as RStudio, Eclipse, Jupyter Notebooks, MATLAB, and others for a semester. These are run through your
   web browser; no software download is required. 
   
   Two containers likely to be most useful are:
     
-    - `RStudio` - statistics application with Rmarkdown and knitr support
+    - `RStudio` - statistics application with R Markdown and knitr support
     - `Jupyter` - interactive data science and scientific computing notebooks
 
 ##
@@ -199,6 +196,18 @@ Duke OIT offers virtual software containers and semester-long virtual machines.
     - By default each VM will power down at 6:00 am every morning
       - Can be avoided if you have a reasonable use case
 
+## Research Toolkits
+
+<https://rtoolkits.web.duke.edu/> is a tool provided by Duke Research Computing to access resources for the DCC.
+
+If you log in, everyone should be able to see that you are a member of the "statdept" group.
+
+**For PhD students** - You can claim the "Doctoral Resources" allocation to get access to the doctoral student allocation on the DCC.
+
+
+![](images/DoctoralClaimButton.png){width=300 fig-align="center"}
+
+
 
 ## Duke Compute Cluster
 
@@ -206,9 +215,9 @@ The Duke Compute Cluster (DCC) consists of machines that the University has
 provided for community use and that researchers have purchased to conduct their 
 research. You will need to be given access before use.
 
-- Runs Linux (CentOS 8) and uses the SLURM job management system
+- Runs Linux and uses the SLURM job management system
 
-- Offers over 1300 nodes with more than 30,000 cores, 750 GPUs, 200 TBs of RAM and 7 PB file system.
+- Offers over 1360 nodes with more than 45,000 vCPUs, 980 GPUs and 270TB of RAM.
 
 - Most nodes are purchased by labs and departments.
 
@@ -235,14 +244,25 @@ infrastructure and application support.
 - Live service status dashboard available at [status.oit.duke.edu](https://status.oit.duke.edu/) or [@DukeOIT](https://twitter.com/DukeOIT/)
 
 
+## AI @ Duke
+
+Recently Duke has entered into a partnership with OpenAI to provide access to GPT-4 and other tools. As graduate students you can access these services via:
+
+* <https://chat.ai.duke.edu> - DukeGPT
+
+* <https://dashboard.ai.duke.edu> -  MyGPTBuilder & AI Gateway
+
+There is also access to Microsoft Copilot tools via your Duke Office365 account.
+
+
 # DSS Computing Resources
 
 
 ## RStudio Workbench
 
-The DSS has an Posit / RStudio Workbench (formerly Pro) license that will allow you to connect to an instance of RStudio (or Jupyter Lab or VS Code) in your browser while making use of the computing power of a remote multiprocessor server.
+The DSS has a Posit / RStudio Workbench license that will allow you to connect to an instance of RStudio (or Jupyter Lab or VS Code or Positron) in your browser while making use of the computing power of a remote multiprocessor server.
 
-To access RStudio Pro:
+To access Posit Workbench:
 
 1. If off campus, use the VPN to create a secure connection from your computer 
    to Duke. If you are on campus, be sure you are connected to the DukeBlue
@@ -253,33 +273,15 @@ To access RStudio Pro:
 3. Log-in with your NetID and password.
 
 
-## Other resources
-
-- Local file system on DSS servers
-
-  - Connect via SSH 
-  ```
-  ssh netid@ssh.stat.duke.edu
-  ```
-  
-- RStudio Connect
-
-  - Connect to <https://shiny.stat.duke.edu>
-
-- Departmental IT resources - <https://stat.duke.edu/it-support>
-
-- Departmental Wiki - <https://wiki.stat.duke.edu>
-  - Printer configuration details
+*Note* - this is a small cluster of 3 machines, it is intended for teaching and light workloads. If you need more resources, you should use the DCC directly.
 
 
 ## Getting help with DSS resources
 
+Departmental IT resources - <https://stat.duke.edu/it-support>
+
 The best way to get help with DSS computing resources is to email 
 [stat-help@duke.edu](mailto:stat-help@duke.edu).
-  
-[Zoyia Melton](https://stat.duke.edu/people/zoyia-melton) - Senior IT Analyst
-
-  - Phone: (919) 684-5419
 
 Science Drive - Academic Technology Support
 

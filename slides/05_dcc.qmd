@@ -1,8 +1,7 @@
 ---
 title: "Duke Compute Cluster (DCC)"
-subtitle: "2024 DSS Bootcamp"
-author: "Dr. Alexander Fisher"
-date: "August 16, 2024"
+subtitle: "2025 DSS Bootcamp"
+author: "Colin Rundel"
 format: 
   revealjs:
     self-contained: true
@@ -13,262 +12,171 @@ execute:
   echo: true
 ---
 
-# Connect and run your first job
+# DCC Basics
 
-## To connect to DCC
+## What is the DCC?
 
-::: panel-tabset
-## Mac / Linux
+> The Duke Compute Cluster is a general purpose high performance/high-throughput installation, and it is fitted with software used for a broad array of scientific projects. With a few notable exceptions, applications on the cluster are generally Free and Open Source Software.
+>
+> Quick facts:
+>
+> * 1360 nodes which combined have more than 45,000 vCPUs, 980 GPUs and 270TB of RAM
+> 
+> * Interconnects are 10 Gbps or 40 Gbps
+>
+> * Utilizes a 7 Petabyte Isilon file system
+>
+> * Runs Alma 9 and SLURM is the job scheduler
 
-1.  Open terminal and type the following:
 
-```{bash}
-#| eval: false
-ssh netid@dcc-login.oit.duke.edu
-```
+## Cluster Appropriate Use
 
-## Windows
+>Users of the cluster agree to only run jobs that relate to the research mission of Duke University. Use of the cluster for the following activities is prohibited:
+>
+> * Financial gain
+> 
+> * Commercial or business use
+> 
+> * Unauthorized use or storage of copyright-protected or proprietary resources
+> 
+> * Unauthorized mining of data on or off campus (including many web scraping techniques)
 
-1.  Open command prompt and type the following:
+## Data Security
 
-```{bash}
-#| eval: false
-ssh netid@dcc-login.oit.duke.edu
-```
+> Users of the cluster are responsible for the data they introduce to the cluster and must follow all applicable Duke (including IRB), school, and departmental policies on data management and data use. 
+
+> Security and compliance provisions on the cluster are sufficient to meet the Duke data classification standard for public or restricted data.  
+
+> Use of sensitive data (e.g. legally protected data such as PHI or FERPA) or data bound by certain restrictions in data use agreements is not allowed. 
+
+. . .
+
+> As a shared resource, privacy on the cluster is constrained and users of the cluster must conduct themselves in a manner that respects other researchers’ privacy. Cluster support staff have access to all data on the cluster and may inspect elements of the system from time to time. Metadata on the cluster and utilization by group (and sometimes user) will be made available to all cluster users and Duke stakeholders.
+
+
+## Data Classification Standard
+
+See [Data Classification Standard](https://security.duke.edu/policies-procedures-and-standards/data-security/data-classification-standard/) for more details:
+
+* **Sensitive**	- this is data that Duke is either required by law to protect, or which Duke protects to mitigate institutional risk. (SSNs, CCNs, PHI, etc.)
+
+* **Restricted** - this is data that is not necessarily for public consumption, but also does not fit into the Sensitive category. Duke may have a proprietary obligation to protect Restricted data, but disclosure would not significantly harm the university. (NDA data, financial transaction data, etc.)
+
+* **Public** -All other data, which can be accessible to the general public. 
+
+## Storage on the DCC {.smaller}
+
+| Path | Size | Description | Backups |
+|------|------|-------------|---------|
+| `/work/<netid>` | 650 TB | "Unpartitioned, high speed volume, shared across all users" | None |
+| `/cwork/<netid>` | 830 TB | High speed volume | None |
+| `/hpc/home/<netid>` | 25 GB | "Personal scripts, and other environment setup" | None |
+| `/hpc/group/<groupname>` | 1 TB (expandable) | "Private to each lab group" | 7-day snapshot |
+| `/hpc/dctrl/<netid>` | 500 GB | "Private to each PhD student" | 7-day snapshot |
+| `/datacommons/<groupname>` | Fee-based | "Archival storage" | Optional 30-day backup |
+
+## Storage usage
+
+* `/home` - personal scripts and configuration files, environment setup information
+
+* `/group` - software installations, lab specific scripts, moderately sized data sets or intermediate results that are needed for longer than 75 days.
+
+* `/work` - large data sets under analysis, intermediate results. **Files older than 75 days are automatically purged!**
+
+* `/cwork/` - experimental version of /work for large data sets under analysis, intermediate data, and preliminary results. **Files older than 75 days are automatically purged!**
+
+* `/datacommons` - long term storage for source data and results data
+
+* `/scratch` - node specific high speed storage, data must be deleted when job is complete. Sizes vary by node, use with caution.
+
+::: {.aside}
+For `/work/` and `/cwork/` you may need to create your own folder for your use with `mkdir <netid>`.
 :::
 
-. . .
 
-2.  Enter your passcode and complete two-factor authentication
+## Accessing the DCC
 
-. . .
+All access to the DCC compute nodes is managed through the slurm job scheduler.
 
-After successful login, you will see
+Traditionally, users would log in to the cluster via SSH and then submit jobs to the scheduler. 
 
-```
-userid@dcc-login  ~ $
-```
+This is still the preferred approach for large scale jobs but is beyond the scope of today's workshop. If this is of interest to you I strongly recommend [RC training](https://oit-rc.pages.oit.duke.edu/rcsupportdocs/help/training/).
 
-indicating that you are on a **login** node.
 
-. . .
+## Open OnDemand
 
-::: callout-warning
-Do **not** run code from the login node! The login node is only job submission,  job monitoring and other lightweight tasks such as small file transfers and script editing.
+For interactive use the current recommended approach is to use the OnDemand web-based interface.
+
+* Open OnDemand gives access to tools like Jupyter Notebooks, RStudio, and VS Code on the DCC through your browser
+
+* Currently there are two flavors of OnDemand available:
+  * RC OnDemand - <https://dcc-ondemand-01.oit.duke.edu/>
+  * Stats OnDemand - <https://dcc-stat-ondemand-01.oit.duke.edu>
+
+
+# OnDemand Demo
+
+## Accessing OnDemand
+
+::: {.r-stack} 
+
+![](images/ondemand1.png){width="85%" fig-align=center .fragment .fade-in-then-out}
+
+![](images/ondemand2.png){width="85%" fig-align=center .fragment .fade-in-then-out}
+
+![](images/ondemand4.png){width="85%" fig-align=center .fragment .fade-in-then-out}
+
+![](images/ondemand5.png){width="85%" fig-align=center .fragment .fade-in-then-out}
+
+![](images/ondemand6.png){width="85%" fig-align=center .fragment}
+
 :::
 
-## To reserve a compute node
+## Accounts & Partitions
 
-```{bash}
-#| eval: false
-srun --pty bash -i
-```
+Your account will belong to different groups and those groups will have access to different partitions on the DCC.
 
-This is a standard command in Slurm (Simple Linux Utility for Resource Management) to queue and run a job. Slurm is a workload manager (a collection of tools) designed to help you interact with a compute cluster.
-
--   `srun` runs a parallel job
-
--   `--pty` lets you interact with the node
-
--   `bash` is the terminal environment to interact with
+OnDemand generally will let you know which partitions you have access to, but this is a common reason a job may fail to run.
 
 . . .
 
-Read more about slurm from official documentation:\
-<https://slurm.schedmd.com/overview.html>
+*General use partitions*:
 
-## To run code
+* **interactive** for short interactive sessions, default resources are low.
+* **common** for jobs that will run on the DCC core node
+* **gpu-common** for jobs that will run on DCC GPU nodes
+* **scavenger** for jobs that will run on lab-owned nodes in “low priority” (kill and requeue preemption).
+* **scavenger-gpu** for GPU jobs that will run on lab-owned nodes in “low priority” (kill and requeue preemption)
 
-. . .
+## Limitations
 
-First you must make sure the correct *module* is loaded. For example, if you wish to run R, you must first load a version of R. To see available versions, type
+Interactive partition:
 
-```{bash}
-#| eval: false
-module avail R
-```
+* 10 CPUs, 64 GB memory
 
+All other partitions:
 
-. . .
+* Total memory per user account: 1.5 TB
+* Total CPUs per user account: 400
+* Queued jobs per user per account: 400
 
-Next, load a module,
+## Important Job Options
 
-```{bash}
-#| eval: false
-module load R/4.4.0
-```
+Stat OnDemand has been customized and looks a little bit different but the core job details are basically the same.
 
+After account and partition, the other important job options are:
 
-. . .
+* **Session duration** - how long the job will run before it is killed, better to pick longer than you think you need and then cancel the job if you finish early.
 
-Finally, call R by typing
-
-```{bash}
-#| eval: false
-R
-```
+* **Session size** - how many CPUs and GBs of memory to ask for. Keep in mind partition limits and larger jobs may take longer to schedule. We've provided defaults that should work for most use cases, but custom values can be set under "Advanced Options".
 
 
-. . .
+## App Container
 
-Now you can run actual R code!
+This is another advanced option - we have pre-built containers for all of the tools provided that have a preconfigured environment with Python, R, and Julia installed (including common packages).
 
-```{r}
-#| code-line-numbers: true
-rnorm(5)
-```
+The hope is that these will meet most of your needs, but you can also create your own containers if something more specialized is needed.
 
-. . .
-
-To close the R session,
-
-```{r}
-#| code-line-numbers: true
-#| eval: false
-quit()
-```
-
-## To close a node
-
-```{bash}
-#| eval: false
-exit 0
-```
-
-# Files and job deployment
-
-## File structure and unix commands
-```{css}
-#| echo: false
-
-.reveal table {
-  font-size: 12pt;
-}
-
-```
-
-::: {style="font-size: 70%;"}
-A "folder" aka a "directory" is a holding place for files.
-
-A "file\* is an element of a directory, e.g. `/hpc/home/username/test.r` is a file contained in the `username` directory. The `username` directory is inside of the `home` directory.
-:::
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| command                          | action                                                                                                                         |
-+==================================+================================================================================================================================+
-| `$ ls`                           | list files in current directory                                                                                                |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ pwd`                          | print working directory                                                                                                        |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ cd`                           | change directory\                                                                                                              |
-|                                  | example: `$ cd ..` to go to parent directory                                                                                   |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ mkdir dname`                  | make directory "dname"                                                                                                         |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ mkdir s{1..5}`                | overpowered file creation                                                                                                      |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ rm /path/to/file`             | remove a file                                                                                                                  |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ rm -rf dname`                 | recursively remove a directory and its contents                                                                                |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ rm core*`                     | remove all objects in the current working directory that begin with "core"                                                     |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ wc -l`                        | show \# lines in a file                                                                                                        |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ y > x.txt`                    | pass printed output from command "y" on the left to file "x.txt" on the right\                                                 |
-|                                  | example: `$ head -N file1.txt > file2.txt` creates a new file called "file2" that is a replica of the first N lines of file 1\ |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ echo 'text here' >> filename` | add text to the end of a file                                                                                                  |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ man x`                        | pull up documentation for command x, example: `$ man ls`                                                                       |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-
-## Git on the cluster
+If you would like to explore this see [RC Containers](https://oit-rc.pages.oit.duke.edu/rcsupportdocs/software/containers/#getting-and-building-singularity-containers) documentation for details or come chat with me.
 
 
-#### Setting up GitHub
-
-[https://github.com/DukeStatSci/github_auth_guide](https://github.com/DukeStatSci/github_auth_guide)
-
-#### Pulling files
-
-. . .
-
-```{bash}
-#| eval: false
-git clone https://github.com/DukeStatSci/computing_bootcamp_2024.git
-```
-
-. . .
-
-You can now run, e.g. 
-
-```{bash}
-#| eval: false
-Rscript path-to-file/test.R
-```
-
-::: callout-note 
-## Exercise
-What is the correct `path-to-file`?
-:::
-## Submitting a job
-
-
-What if you have multiple files to run? Or what if you have a non-trivial file to run that takes some time? You can't keep an interactive session open for ever.
-
-. . .
-
-The solution is to submit a job, that will run even after you log out of DCC. For this, we will create a shell script.
-
-. . . 
-
-```{bash}
-#| eval: false
-#!/bin/bash
-#SBATCH --error slurm_%a.err   #error message
-#SBATCH --partition=common
-#SBATCH --output=file-screen-log.output   #screen log
-#SBATCH --mem-per-cpu=1G   #adjust as needed
-Rscript path-to-file/test.R
-```
-
-## Practice
-
-::: callout-note
-## Exercise
-1. Save the script on the previous slide as `test-job.sh`
-1. change `file-screen-log.output` to something more meaningful
-3. update `path-to-file`. Note this must be relative to where `.sh` script is located
-4. run `sbatch test-job.sh`
-:::
-
-. . . 
-
-Upon successful submission, you should see "Submitted batch job X" where X is some unique id associated with the job.
-
-. . .
-
-Check out the resulting files with `ls`. For further reading, see the DCC user guide: 
-[https://dcc.duke.edu/dcc/slurm/](https://dcc.duke.edu/dcc/slurm/).
-
-## Getting files off the server
-
-```{bash}
-#| eval: false
-scp <netid>@dcc-login.oit.duke.edu:<dccpath.filename> <localpath>
-```
-
-. . . 
-
-More specifically, if `test-output.txt` is located in your `~` directory on the cluster, you can run
-
-```{bash}
-#| eval: false
-scp netid@dcc-login.oit.duke.edu:~/test-output.txt ./
-```
-
-in your local terminal or command prompt.
-
-For more options, see documentation about working with files on the cluster: [https://oit-rc.pages.oit.duke.edu/rcsupportdocs/dcc/files/#how-should-i-use-dcc-storage](https://oit-rc.pages.oit.duke.edu/rcsupportdocs/dcc/files/#how-should-i-use-dcc-storage)
-
-For info about a popular GUI for file transfers, check out [https://cyberduck.io/download/](https://cyberduck.io/download/)

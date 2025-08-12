@@ -1,9 +1,8 @@
 ---
 title: "Responsible research<br/>and reproducibility"
-subtitle: "2024 DSS Bootcamp"
-author: "Dr. Alexander Fisher"
+subtitle: "2025 DSS Bootcamp"
+author: "Colin Rundel"
 institute: ""
-date: "August 16, 2024"
 format: 
   revealjs:
     self-contained: true
@@ -72,15 +71,36 @@ The journal Heart has retracted a 2012 meta-analysis after learning that
 :::
 
 
-## Evidence of Fraud in an Influential Field Experiment About Dishonesty 
+## Clusterfake {.smaller}
 
-In 2022 the paper “*Signing at the beginning makes ethics salient and decreases dishonest self-reports in comparison to signing at the end*,” by Lisa L. Shu, Nina Mazar, Francesca Gino, Dan Ariely, and Max H. Bazerman from 2012 was retracted due to the discovery of issues of data fabrication with one of the reported studies (see [here](https://datacolada.org/98)).
+::: {.columns}
+::: {.column width="50%"}
+Shu, Mazar, Gino, Ariely, & Bazerman (2012), "Signing at the beginning makes ethics salient…." PNAS - was a very influential paper that claimed to have found that signing a declaration of honesty at the beginning of a survey reduced dishonest self-reports. It involved multiple independent studies and was widely cited in the literature. 
 
-More recently additional evidence has been found of data fabrication within a different study by a different author.
+The paper was retracted in 2021 due to concerns about data fabrication and manipulation in one of the studies.
+
+Subsequently, additional issues were discovered in a different study by a different author within the same paper.
+:::
+::: {.column width="50%"}
+
+::: {.r-stack}
+
+![](images/ariely1.png){.fragment .fade-in-then-out}
+
+![](images/ariely2.png){.fragment .fade-in-then-out}
+
+![](images/gino1.png){.fragment .fade-in-then-out}
+
+![](images/gino2.png){.fragment}
+
+:::
+
+:::
+:::
 
 
 ::: aside
-*Source*: http://datacolada.org/109
+*Source*: https://datacolada.org/98 and http://datacolada.org/109
 :::
 
 # Practice
@@ -101,6 +121,14 @@ were parameter settings chosen?)
 - Can you extend the code to do other things?
 <br><br>
 
+## Reproducibility in science
+
+![](images/leek_fig.jpg){fig-align="center" width="45%"}
+
+::: {.aside}
+Patil, P., Peng, R.D. & Leek, J.T. A visual tool for defining reproducibility and replicability. Nat Hum Behav 3, 650–652 (2019). https://doi.org/10.1038/s41562-019-0629-z
+:::
+
 
 ## Ambitious goal
 
@@ -113,7 +141,7 @@ inseparable,
     + the original data remains untouched
     + all data manipulations and analyses are inherently documented
 
-- documentation is human readable and syntax is minimal.
+- all procedures are human readable and understandable.
 
 
 ## Donald Knuth "Literate Programming" (1983)
@@ -158,7 +186,7 @@ R / Python
 <br/>
 <br/>
 
-:::: columns
+:::: {.columns}
 
 ::: {.column width="50%"}
 Literate Programming
@@ -178,7 +206,5 @@ Git / GitHub
 :::
 
 ::::
-
-. . .
 
 <br/>

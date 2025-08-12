@@ -1,9 +1,8 @@
 ---
 title: "Literate Programming"
-subtitle: "2024 DSS Bootcamp"
-author: "Dr. Alexander Fisher"
+subtitle: "2025 DSS Bootcamp"
+author: "Colin Rundel"
 institute: ""
-date: "August 16, 2024"
 format: 
   revealjs:
     self-contained: true
@@ -13,7 +12,7 @@ execute:
   echo: true
 ---
 
-# R, RMarkdown, and Quarto
+# R, R Markdown, and Quarto
 
 ## What is markdown?
 
@@ -32,9 +31,9 @@ friendly) markup language for creating pdf documents.
   - Focus on **content**, rather than **coding** and debugging **errors**.
   - Once you have the basics down, you can get fancy via HTML, JavaScript, 
     and CSS.
-  - Used by RMarkdown, Jupyter Notebooks, and Quarto
+  - Used by R Markdown, Jupyter Notebooks, and Quarto
   
-## R Markdown / Quarto - Input
+## R Markdown / Quarto - Input {.smaller}
 
 :::: {.columns}
 ::: {.column width='50%'}
@@ -248,199 +247,13 @@ These slides were made with quarto and `revealjs`.
     - [swirl](https://swirlstats.com/): swirl teaches you R programming and data science interactively, at your own pace, and right in the R console
     - [R manuals](https://cran.r-project.org/manuals.html)
     - [R for Data Science](https://r4ds.had.co.nz) by Hadley Wickham and 
-      Garret Grolemund
+      Garrett Grolemund
     - [R Cookbook](https://www.amazon.com/gp/product/0596809158/ref=as_li_tf_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0596809158&linkCode=as2&tag=cooforr09-20) by Paul Teetor
 
 - Next steps
 
     - [Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham
     - [R Packages](http://r-pkgs.had.co.nz/) by Hadley Wickham
-
-:::
-
-## More R / RStudio resources
-
-- Some useful resources from RStudio: 
-  https://www.rstudio.com/resources/cheatsheets/
-  
-    - RStudio IDE Cheat Sheet
-    - R Markdown Cheat Sheet
-    - R Markdown Reference Guide
-    - Data Import Cheat Sheet
-    - Data Transformation Cheat Sheet
-    - Data Visualization Cheat Sheet
-    
-Some of the above cheat sheets are available in RStudio: `Help > Cheatsheets`
-
-
-
-
-
-
-
-# Jupyter notebook demo
-
-
-
-
-## Why python?
-
-![](images/kd_nuggets.png){fig-align="center" width="80%"}
-
-::: {.aside}
-*Source*: <https://www.kdnuggets.com/2020/06/data-science-tools-popularity-animated.html>
-:::
-
-
-## Stack Overflow trends
-
-To see how technologies have trended over time based on use of their 
-tags since 2008 we can look at Stack Overflow trends.
-
-
-![](images/stack_overflow.png){fig-align="center" width="66%"}
-
-
-
-
-## RStudio Workbench + Jupyter
-
-If you return to <https://rstudio.stat.duke.edu> you can launch a new session and select Jupyter Lab as your editor of choice.
-
-<br/><br/>
-
-```{r echo=FALSE, out.width="66%"}
-knitr::include_graphics("images/workbench_jupyter.png")
-```
-
-
-
-
-## Overview of the notebook
-
-Bimodal interface: edit mode and command mode
-
-. . .
-
-Click in a cell or hit `enter` to enter edit mode
-
-![](images/edit-mode.png){fig-align="center" width="100%"}
-
-When in edit mode you can type code or write text with markdown.
-
-. . .
-
-Hit `esc` to enter command mode
-![](images/command_mode.png){fig-align="center" width="100%"}
-
-When in command mode you can make edits to the notebook, but not individual
-cells.
-
-
-
-## Notebook shortcuts
-
-In **edit** mode:
-
-- `shift + enter` - Run cell and add new cell
-- `enter` - Add a line within a cell
-
-. . .
-
-In **command** mode:
-
-- `s` - Save the notebook
-- `m` - Change cell to markdown
-- `y` - Change cell to code
-- `x`, `c`, `v`, `d` - Cut, copy, paste, delete a cell
-- `a`, `b` - Add a cell above, below
-
-. . .
-
-The point-and-click interface is also an option to execute these commands.
-
-
-
-## Jupyter and Terminal
-
-- Jupyter Lab provides a direct interface to the terminal (similar to RStudio) under Other > Terminal
-
-- Terminal commands can also be included in notebooks by prefixing with `!`, e.g.
-
-```python
-!pip install --user statsmodels
-```
-. . . 
-
-::: callout-note 
-## Exercise
-Clone the bootcamp repo from terminal and open `examples/unvotes.ipynb`.
-:::
-
-## Unvotes data analysis
-
-- Render the entire document by selecting Run > Run All Cells
-
-- Try changing one or more of the selected countries, rerunning the document, observe any changes.
-
-<br/>
-
-
-
-## Jupyter notebook versus R Markdown
-
-- Similar to R Markdown, Jupyter notebooks allow you to write code and text in
-  one easy to read document that is reproducible and easy to share with others.
-
-- Jupyter notebooks include the text, code *and* computational output.
-
-- A Jupyter notebook does not knit to an HTML, PDF or Word file. However, you
-  can embed HTML into a notebook.
-  - Exports are possible with packages like `nbcovert`
-
-- For a more detailed comparison see 
-  [The First Notebook War](https://yihui.name/en/2018/09/notebook-war/).
-
-
-## Jupyter notebook + quarto
-
-Quarto was build to unify the scientific publish process across the most commonly used notebook formats and this include Jupyter notebooks.
-
-Specifically, quarto has a couple of neat tricks:
-
-- Render `ipynb` files using the jupyter engine
-  ```
-  quarto render unvotes.ipynb --execute
-  quarto render unvotes.ipynb --execute --to pdf
-  ```
-  
-- Converts between `ipynb` and `qmd` files seamlessly
-  ```
-  quarto convert unvotes.ipynb
-  ```
-
-## Additional Python resources
-::: {style="font-size: 80%;"}
-
-- Style
-
-    - [PEP 8](https://www.python.org/dev/peps/pep-0008/): standard Python style
-    - [PEP 257](https://www.python.org/dev/peps/pep-0257/): documentation
-      conventions
-
-- Beginner
-
-   - [Python](https://www.python.org/): official documentation and tutorial
-   - [Jupyter](https://jupyter.org/): web notebook interface, reproducible 
-     research
-   - [A Byte of Python](https://python.swaroopch.com/)
-   - [Python Crash Course](https://ehmatthes.github.io/pcc/)
-   - [Python Crash Course - Cheat Sheets](https://ehmatthes.github.io/pcc/cheatsheets/README.html)
-
-- Next steps
-
-    - [Python Package Index](https://pypi.org)
-    - [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/runestone/books/published/pythonds/index.html)
 
 :::
 
