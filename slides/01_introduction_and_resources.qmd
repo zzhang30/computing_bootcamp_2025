@@ -17,7 +17,7 @@ execute:
 Welcome to the Department of Statistical Science (DSS).
 
 Find all slides and source code at  
-[github.com/DukeStatSci/computing_bootcamp_2025](https://github.com/DukeStatSci/computing_bootcamp_2025).
+[github.com/DukeStatSci/computing_bootcamp_2025](https://github.com/DukeStatSci/computing_bootcamp_2025)
 
 By the end of today's workshop, you will
 
@@ -37,7 +37,7 @@ By the end of today's workshop, you will
 
 Your Duke NetID is the electronic key for accessing most Duke resources.
 
-Most important resources are locked down behind the Duke login service shibboleth.
+Most important resources are locked down behind the Duke shibboleth login service,
 
 ![](images/shib.png){width=75% fig-align="center"}
 
@@ -45,7 +45,11 @@ Most important resources are locked down behind the Duke login service shibbolet
 
 ## OIT Self-Service
 
-All of the following can be accomplished at <https://idms-web-selfservice.oit.duke.edu/>:
+All of the following can be accomplished at 
+
+::: {.center}
+<https://idms-web-selfservice.oit.duke.edu/>:
+:::
 
   - Changing your password
   
@@ -55,7 +59,7 @@ All of the following can be accomplished at <https://idms-web-selfservice.oit.du
   
   - Change email alias(es)
   
-  - ssh keys + default shell
+  - Add ssh keys and pick a default shell
 
 
 ## Duke email
@@ -67,7 +71,9 @@ With your NetID and password, you can access your email on the web at
 
 - Mail forwarding is possible but not recommended
 
+- There are limitations on the 3rd party email and calendar clients you can use with your Duke email account
 
+  - See <https://oit.duke.edu/help/articles/kb0028560/>
 
 ## Duke WiFi
 

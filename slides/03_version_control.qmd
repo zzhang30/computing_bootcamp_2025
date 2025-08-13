@@ -19,7 +19,7 @@ execute:
 ::: {style="font-size: 80%;"}
 - Create a GitHub account (unless you already have one) on [https://github.com/](https://github.com/)
 
-- One day you might want to show off your work, so choose a username you will be proud to show to a future employer.
+- One day you might want to show off your work, so choose a username you will be ok with disclosing to a future employer.
 
 Some suggestions: 
 
@@ -46,7 +46,8 @@ To access RStudio Workbench:
 If you are having trouble accessing RStudio Workbench see the next slide.
 
 ::: aside
-If off campus, use the VPN to create a secure connection from your computer to Duke. If you are on campus, be sure you are connected to the DukeBlue network.
+If off campus, use the VPN to create a secure connection from your computer to Duke. <br/>
+If you are on campus, be sure you are connected to the DukeBlue network.
 :::
 
 
@@ -133,13 +134,19 @@ git is already set-up on the DSS server(s). In the terminal tab you can verify t
 
 ``` bash
 [cr173@hypatia ~]$ git --version
-git version 2.20.1
+```
+```
+## git version 2.20.1
 ```
 
+<br/>
 
 ```{bash eval=FALSE}
 [cr173@hypatia ~]$ which git
-/usr/bin/git
+```
+
+```
+## /usr/bin/git
 ```
 
 ::: aside

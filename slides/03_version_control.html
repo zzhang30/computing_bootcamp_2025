@@ -1074,7 +1074,7 @@ Colin Rundel
 <div style="font-size: 80%;">
 <ul>
 <li><p>Create a GitHub account (unless you already have one) on <a href="https://github.com/">https://github.com/</a></p></li>
-<li><p>one day you might want to show off your work, so choose a username you will be proud to show to a future employer.</p></li>
+<li><p>One day you might want to show off your work, so choose a username you will be ok with disclosing to a future employer.</p></li>
 </ul>
 <p>Some suggestions:</p>
 <ul>
@@ -1097,7 +1097,7 @@ Colin Rundel
 <p>If you are having trouble accessing RStudio Workbench see the next slide.</p>
 
 <aside><div>
-<p>If off campus, use the VPN to create a secure connection from your computer to Duke. If you are on campus, be sure you are connected to the DukeBlue network.</p>
+<p>If off campus, use the VPN to create a secure connection from your computer to Duke. <br> If you are on campus, be sure you are connected to the DukeBlue network.</p>
 </div></aside></section>
 <section id="dss-rstudio-alternatives" class="slide level2">
 <h2>DSS RStudio alternatives</h2>
@@ -1110,7 +1110,7 @@ Colin Rundel
 <li><p>Use a Docker container from Duke OIT</p>
 <ol type="1">
 <li>Go to <a href="https://cmgr.oit.duke.edu/" class="uri">https://cmgr.oit.duke.edu/</a> and login</li>
-<li>Select <code>Reserve a Container</code> and find <code>RStudio (statistics application with Rmarkdown and knitr support)</code></li>
+<li>Select <code>Reserve a Container</code> and find <code>RStudio (statistics application with R Markdown and knitr support)</code></li>
 <li>Click the link under my reservations to create your environment</li>
 </ol></li>
 <li><p>Install R and RStudio locally on your computer</p>
@@ -1186,12 +1186,13 @@ Colin Rundel
 <section id="verifying-git-exists" class="slide level2">
 <h2>Verifying git exists</h2>
 <p>git is already set-up on the DSS server(s). In the terminal tab you can verify this by running:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href></a><span class="ex">[cr173@hypatia</span> ~]$ git <span class="at">--version</span></span>
-<span id="cb1-2"><a href></a><span class="fu">git</span> version 2.20.1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href></a><span class="ex">[cr173@hypatia</span> ~]$ git <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## git version 2.20.1</code></pre>
+<p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href></a><span class="ex">[cr173@hypatia</span> ~]$ which git</span>
-<span id="cb2-2"><a href></a><span class="ex">/usr/bin/git</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href></a><span class="ex">[cr173@hypatia</span> ~]$ which git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<pre><code>## /usr/bin/git</code></pre>
 
 <aside><div>
 <p>To install git on your own computer follow the directions in <a href="https://happygitwithr.com/install-git.html">Happy Git and GitHub for the useR</a>.</p>
@@ -1200,7 +1201,7 @@ Colin Rundel
 <h2>Git sitrep</h2>
 <p>Within R we can also use the <code>usethis</code> package to get a helpful summary of the current git configuration,</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <pre><code>## Git config (global)
 ## ● Name: &lt;unset&gt;
@@ -1224,16 +1225,16 @@ Colin Rundel
 <section id="configure-git" class="slide level2">
 <h2>Configure git</h2>
 <p>The following will tell git who you are, and other common configuration tasks.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
-<span id="cb5-2"><a href></a>  <span class="at">user.name =</span> <span class="st">&quot;Colin Rundel&quot;</span>,</span>
-<span id="cb5-3"><a href></a>  <span class="at">user.email =</span> <span class="st">&quot;rundel@gmail.com&quot;</span>,</span>
-<span id="cb5-4"><a href></a>  <span class="at">push.default =</span> <span class="st">&quot;simple&quot;</span></span>
-<span id="cb5-5"><a href></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
+<span id="cb7-2"><a href></a>  <span class="at">user.name =</span> <span class="st">&quot;Colin Rundel&quot;</span>,</span>
+<span id="cb7-3"><a href></a>  <span class="at">user.email =</span> <span class="st">&quot;rundel@gmail.com&quot;</span>,</span>
+<span id="cb7-4"><a href></a>  <span class="at">push.default =</span> <span class="st">&quot;simple&quot;</span></span>
+<span id="cb7-5"><a href></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You will need to do this configuration once on each machine in which you use git (e.g. the server and your laptop).</p>
 <p>This can also be done via the terminal with,</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">&quot;Colin Rundel&quot;</span></span>
-<span id="cb6-2"><a href></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">&quot;rundel@gmail.com&quot;</span></span>
-<span id="cb6-3"><a href></a><span class="fu">git</span> config <span class="at">--global</span> push.default simple</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">&quot;Colin Rundel&quot;</span></span>
+<span id="cb8-2"><a href></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">&quot;rundel@gmail.com&quot;</span></span>
+<span id="cb8-3"><a href></a><span class="fu">git</span> config <span class="at">--global</span> push.default simple</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 <aside><div>
 <p>All of these values will be saved in the <code>.gitconfig</code> file in your home directory</p>
@@ -1241,7 +1242,7 @@ Colin Rundel
 <section id="configure-git-verification" class="slide level2">
 <h2>Configure git verification</h2>
 <p>To verify you configured git correctly, run</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>## Git config (global)
 ## ● Name: &#39;Colin Rundel&#39;
 ## ● Email: &#39;rundel@gmail.com&#39;
@@ -1260,7 +1261,7 @@ Colin Rundel
 <h2>Configure SSH and GitHub (authentication)</h2>
 <p>We will be authenticating with GitHub using SSH via public / private keys. We can create a new key pair (if necessary) by running the following in RStudio’s <em>console</em>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href></a>credentials<span class="sc">::</span><span class="fu">ssh_setup_github</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href></a>credentials<span class="sc">::</span><span class="fu">ssh_setup_github</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
 <pre><code>## No SSH key found. Generate one now? 
@@ -1315,7 +1316,7 @@ Colin Rundel
 <h2>Activity</h2>
 <p>We will now make sure that everything is working correctly by making changes to the <code>README.md</code> file in the repository.</p>
 <ul>
-<li><p>Make a small change to <code>README.md</code> (i.e. add you name) and save the file.</p></li>
+<li><p>Make a small change to <code>README.md</code> (i.e. add your name) and save the file.</p></li>
 <li><p>Stage &amp; commit that change using RStudio’s git GUI</p></li>
 <li><p>Push the changes to GitHub</p></li>
 <li><p>Check that the changes are reflected on GitHub</p></li>

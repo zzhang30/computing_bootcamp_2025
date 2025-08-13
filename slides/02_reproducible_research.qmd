@@ -34,21 +34,20 @@ Source: <http://retractionwatch.com/2014/07/01/bad-spreadsheet-merge-kills-depre
 :::
 
 
-## Study of social media retracted when authors can't provide data
+## Seizure study retracted after authors realize data got "terribly mixed"
 
-> A business journal has retracted a 2016 paper about how social media can
-  encourage young consumers to become devoted to particular brands, after
-  discovering flaws in the data and findings.
+- From the authors of **Low Dose Lidocaine for Refractory Seizures in 
+  Preterm Neonates**:
 
-- Reasons for retraction:
-
-  - Error in data
-  - Error in results and/or conclusions
-  - Results not reproducible
-
+- *"The article has been retracted at the request of the authors. After 
+  carefully re-examining the data presented in the article, they identified 
+  that data of two different hospitals got terribly mixed. The published 
+  results cannot be reproduced in accordance with scientific and clinical 
+  correctness."*
+  
 
 ::: aside
-*Source*: <http://retractionwatch.com/2017/07/31/study-social-media-retracted-authors-cant-provide-data/>
+Source: [retractionwatch.com/2013/02/01/seizure-study-retracted-after-authors-realize-data-got-terribly-mixed/](http://retractionwatch.com/2013/02/01/seizure-study-retracted-after-authors-realize-data-got-terribly-mixed/)
 :::
 
 
@@ -69,6 +68,21 @@ The journal Heart has retracted a 2012 meta-analysis after learning that
 :::aside
 *Source*: [retractionwatch.com/2013/05/02/heart-pulls-sodium-meta-analysis-over-duplicated-and-now-missing-data/](http://retractionwatch.com/2013/05/02/heart-pulls-sodium-meta-analysis-over-duplicated-and-now-missing-data/)
 :::
+
+
+## Potti case
+
+Anil Potti was a rising star cancer researcher here at Duke in the School of Medicine. His lab's research focused on precision oncology (genomic signatures that could be used to predict patient response to chemotherapy).
+
+- Work was published in high-profile journals and received significant funding and attention, clinical trails using some of these results were also conducted.
+
+- Early whistleblower complaints from a medical student were ignored
+
+- Extensive work by statisticians (Baggerly and Coombes) at MD Anderson Cancer Center showed strong evidence that data were fabricated, manipulated, and misrepresented.
+
+- Downfall (in part) was triggered by falsifications of Potti's CV (claimed to have been a Rhodes Scholar)
+
+- Ultimately 11 papers were retracted
 
 
 ## Clusterfake {.smaller}
@@ -100,7 +114,7 @@ Subsequently, additional issues were discovered in a different study by a differ
 
 
 ::: aside
-*Source*: https://datacolada.org/98 and http://datacolada.org/109
+*Source*: <https://datacolada.org/98> and <http://datacolada.org/109>
 :::
 
 # Practice
@@ -123,7 +137,7 @@ were parameter settings chosen?)
 
 ## Reproducibility in science
 
-![](images/leek_fig.jpg){fig-align="center" width="45%"}
+![](images/leek_fig.jpg){fig-align="center" width="43%"}
 
 ::: {.aside}
 Patil, P., Peng, R.D. & Leek, J.T. A visual tool for defining reproducibility and replicability. Nat Hum Behav 3, 650–652 (2019). https://doi.org/10.1038/s41562-019-0629-z
